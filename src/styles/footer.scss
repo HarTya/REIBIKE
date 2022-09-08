@@ -1,0 +1,158 @@
+@keyframes FooterUnderline {
+    0% {
+        opacity: 0;
+    }
+}
+
+.footer {
+    width: 100%;
+    height: auto;
+    background-color: #1C1C1C;
+    padding: 0px 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &_inner {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &_logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &_help {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            margin-right: 15px;
+            &_title {
+                font-size: 24px;
+                opacity: 0.8;
+            }
+            &_contact {
+                margin-top: 5px;
+                font-size: 24px;
+                position: relative;
+                & a {
+                    color: white;
+                }
+                &:hover {
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -10px;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 50%;
+                        height: 2px;
+                        background-color: white;
+                        border-radius: 10px;
+                        animation: FooterUnderline 0.4s ease 1;
+                    }
+                }
+            }
+        }
+        &_quickLinks {
+            height: 82px;
+            display: flex;
+            justify-content: center;
+            margin-right: 15px;
+            &_pages {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                &_page {
+                    opacity: 0.75;
+                    cursor: pointer;
+                    position: relative;
+                    transition: all 0.4s ease-in-out;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                    &-active {
+                        opacity: 1;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &_other {
+                margin-left: 30px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                &_item {
+                    cursor: pointer;
+                    position: relative;
+                    opacity: 0.75;
+                    transition: all 0.4s ease-in-out;
+                    &:hover {
+                        opacity: 0.9;
+                    }
+                    &-active {
+                        opacity: 1;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        &_information {
+            &_contacts {
+                height: 74px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-direction: column;
+                &_contact {
+                    &:first-child {
+                        font-family: 'Segoe UI', sans-serif;
+                        font-weight: 600;
+                    }
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &_text {
+                        margin-left: 5px;
+                        font-size: 14px;
+                        position: relative;
+                        & a {
+                            color: white;
+                            &:hover {
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: -5px;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 50%;
+                                    height: 2px;
+                                    background-color: white;
+                                    border-radius: 10px;
+                                    animation: FooterUnderline 0.4s ease 1;
+                                }
+                            }
+                        }
+                    }
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            &::after {
+                content: '© 2022 REIBIKE. All rights reserved. Design:@oranges_uiux Code:@hartya_';
+                display: block;
+                margin-top: 15px;
+                max-width: 220px;
+                font-size: 12px;
+                opacity: 0.65;
+            }
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
+:root {
+    --main: #1C1C1C;
+    --main-08: rgba(28, 28, 28, 0.8);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+*::selection {
+    background-color: #494949;
+}
+
+#__next {
+    overflow-x: hidden;
+}
+
+#nprogress .spinner {
+    display: none!important;
+}
+
+html, body {
+    height: 100%!important;
+}
+
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background-color: #1C1C1C;
+}
+
+.main {
+    margin-top: 85px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 130px;
+    margin: 0 auto;
+}
+
+.help_ua {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    &_title {
+        font-size: 22px;
+        opacity: 0.8;
+    }
+    &_contact {
+        width: 100%;
+        margin-top: 10px;
+        font-size: 24px;
+        text-align: center;
+        position: relative;
+        & a {
+            color: white;
+        }
+        &:hover {
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10%;
+                height: 2px;
+                background-color: white;
+                border-radius: 10px;
+                animation: FooterUnderline 0.7s ease 1;
+            }
+        }
+    }
+}

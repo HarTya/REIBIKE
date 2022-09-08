@@ -1,0 +1,146 @@
+@font-face {
+    src: url(../fonts/santacalra_black.ttf);
+    font-family: santacalra_black;
+}
+
+@keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+} 
+
+.logo {
+    cursor: pointer;
+    font-size: 40px;
+    font-family: santacalra_black;
+    position: relative;
+    margin-right: 15px;
+    &::after {
+        content: 'BEST FOR BRAVEST';
+        font-size: 10px;
+        position: absolute;
+        left: -4px;
+        bottom: -4px;
+    }
+    z-index: 15!important;
+    &-disabled {
+        display: none;
+    }
+}
+
+.cross {
+    cursor: pointer;
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    z-index: 1001;
+    &::before, &::after {
+        position: absolute;
+        left: 50%;
+        content: '';
+        height: 40px;
+        width: 7px;
+        background-color: black;
+        border-radius: 20px;
+    }
+    &::before {
+        transform: translate(-50%) rotate(45deg);
+    }
+    &::after {
+        transform: translate(-50%) rotate(-45deg);
+    }
+}
+
+.loader {
+    &-white {
+        margin: 50px 0 0 0;
+        .loader_span {
+            background-image: linear-gradient(white 50px, transparent 0), linear-gradient(white 50px, transparent 0), linear-gradient(white 50px, transparent 0), linear-gradient(white 50px, transparent 0), radial-gradient(circle 14px, white 100%, transparent 0);
+        }
+        .loader_span::after, .loader_span::before {
+            border: 6px solid white;
+            background-image: linear-gradient(white 64px, transparent 0), linear-gradient(white 66px, transparent 0), radial-gradient(circle 4px, white 100%, transparent 0);
+        }
+    }
+    margin: 50px;
+    &_span {
+        width: 106px;
+        height: 56px;
+        display: block;
+        margin: 30px auto 50px auto;
+        background-image: linear-gradient(black 50px, transparent 0), linear-gradient(black 50px, transparent 0), linear-gradient(black 50px, transparent 0), linear-gradient(black 50px, transparent 0), radial-gradient(circle 14px, black 100%, transparent 0);
+        background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+        background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+        background-repeat: no-repeat;
+        position: relative;
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+        &::after, &::before {
+            content: '';  
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            border: 6px solid black;
+            border-radius: 50%;
+            left: -45px;
+            top: -10px;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(black 64px, transparent 0), linear-gradient(black 66px, transparent 0), radial-gradient(circle 4px, black 100%, transparent 0);
+            background-size: 40px 1px , 1px 40px, 8px 8px;
+            background-position: center center;
+            box-sizing: border-box;
+            animation: rotation 0.3s linear infinite;
+        }
+        &::before {
+            left: 25px;
+            top: 60px;
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(black, 0.7);
+    z-index: 1000;
+    transition: all 0.2s ease-in-out;
+    &-active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    &_content {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        padding: 90px 50px 50px 50px;
+        background-color: #D9D9D9;
+        border-radius: 25px;
+        min-width: 200px;
+        max-width: 100vw;
+        max-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+}
