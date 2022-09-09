@@ -1046,11 +1046,14 @@
                     font-size: 25px;
                     padding: 10px 15px!important;
                     &_placeholder {
+                        width: 100%;
                         padding: 20px;
                     }
                 }
                 &_inputComment {
                     font-size: 25px;
+                    padding: 10px 15px!important;
+                    border-radius: 35px;
                     &_placeholder {
                         width: 100%;
                         padding: 20px;
@@ -1360,6 +1363,7 @@
                     font-size: 20px;
                     padding: 10px 15px!important;
                     &_placeholder {
+                        width: 100%;
                         font-size: 17px;
                         padding: 0 10px;
                     }
@@ -1368,12 +1372,15 @@
                     font-size: 20px;
                     padding: 10px 15px!important;
                     &_placeholder {
+                        width: 100%;
                         font-size: 17px;
                         padding: 0 10px;
                     }
                 }
                 &_inputComment {
                     font-size: 20px;
+                    padding: 10px 15px!important;
+                    border-radius: 35px;
                     &_placeholder {
                         width: 100%;
                         padding: 0 35px;
