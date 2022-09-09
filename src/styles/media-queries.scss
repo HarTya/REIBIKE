@@ -1044,11 +1044,13 @@
             &_inputs {
                 &_inputContact {
                     font-size: 25px;
+                    padding: 10px 15px!important;
                     &_placeholder {
                         padding: 20px;
                     }
                 }
                 &_inputComment {
+                    font-size: 25px;
                     &_placeholder {
                         width: 100%;
                         padding: 20px;
@@ -1356,6 +1358,7 @@
             &_inputs {
                 &_inputLink {
                     font-size: 20px;
+                    padding: 10px 15px!important;
                     &_placeholder {
                         font-size: 17px;
                         padding: 0 10px;
@@ -1363,6 +1366,7 @@
                 }
                 &_inputContact {
                     font-size: 20px;
+                    padding: 10px 15px!important;
                     &_placeholder {
                         font-size: 17px;
                         padding: 0 10px;

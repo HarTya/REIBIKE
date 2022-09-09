@@ -141,8 +141,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                                                             <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic_title'>{сharacteristic.title}:</div>
                                                             <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic_content'>{сharacteristic.content}</div>
                                                         </div> 
-                                                    : <></>
-                                                    }
+                                                    : <></>}
                                                 </div>
                                             )}
                                         </>
