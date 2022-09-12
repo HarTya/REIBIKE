@@ -208,7 +208,7 @@ function Header(): ReactElement {
                                 </div>
                             </div>
                         </div>
-                    ): <div className='shop_inner_message basket_message'>Перейдіть на сторінку товару, <br/>щоб додати його до кошика</div>}
+                    ): <div className='shop_inner_message basket_message'>Перейдіть на сторінку товару, щоб додати його до кошика</div>}
                     {basketProducts.length ? <div className='basket_buy_button' onClick={() => {dispatch(setBasketState(false)); setIsBuyModalOpen(true)}}>Оформити замовлення</div> : <></>}
                 </div>
             </Modal>
@@ -251,7 +251,7 @@ function Header(): ReactElement {
                             </>
                         }
                     </>
-                    : <div className='shop_inner_message basket_message'>Кошик порожній, <br/>заповніть його щоб оформити замовлення</div>
+                    : <div className='shop_inner_message basket_message'>Кошик порожній, заповніть його щоб оформити замовлення</div>
                 }
             </Modal>
             <div onClick={() => setSuccess('')} className={success ? 'order_success-active order_success' : 'order_success' }>{success}</div>
