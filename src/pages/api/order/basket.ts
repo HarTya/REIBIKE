@@ -33,7 +33,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
             comment = 'покупатель не добавил комментарий';
         }
 
-        const result = await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${process.env.TELEGRAM_GROUP_ID}&text=${contactText} ${String(contact).trim()} | 📋 Заказ на ${price} грн: ${String(content).trim()} | 📃 Комментарий: ${String(comment).trim()}`);
+        const result = await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage?chat_id=${process.env.TELEGRAM_GROUP_ID}&text=${contactText} ${String(contact).trim()} | 📋 Заказ на ${price} $: ${String(content).trim()} | 📃 Комментарий: ${String(comment).trim()}`);
 
         return res.status(200).json(result);
     }

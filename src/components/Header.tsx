@@ -103,7 +103,7 @@ function Header(): ReactElement {
         setError('')
 
         let content = [];
-        basketProducts.map((basketProduct, index) => content.push(`№${index + 1} ${basketProduct.name} ${basketProduct.price}₴ (x${basketProduct.count})`))
+        basketProducts.map((basketProduct, index) => content.push(`№${index + 1} ${basketProduct.name} ${basketProduct.price}$ (x${basketProduct.count})`))
 
         const contentText = content.join(', ');
 
@@ -184,7 +184,7 @@ function Header(): ReactElement {
             </div>
             <Modal visible={basketState} setVisible={setBasketState}>
                 <div className='basket_products'>
-                    {basketProducts.length ? <div className='basket_products_totalPrice'>Всього: {totalPrice} ₴</div> : <></>}
+                    {basketProducts.length ? <div className='basket_products_totalPrice'>Всього: {totalPrice} $</div> : <></>}
                     <span className='basket_icon'><BasketIcon /></span>
                     {basketProducts.length ? basketProducts.map(basketProduct =>
                         <div 
@@ -194,7 +194,7 @@ function Header(): ReactElement {
                             <img src={basketProduct.image} />
                             <div className='basket_products_product_content'>
                                 <div className='basket_products_product_content_name'>{basketProduct.name}</div>
-                                <div className='basket_products_product_content_price'>{basketProduct.price} ₴</div>
+                                <div className='basket_products_product_content_price'>{basketProduct.price} $</div>
                                 <div className='basket_products_product_content_count'>
                                     <div onClick={() => increment(basketProduct.id)}><CountTopArrow /></div>
                                     <span>{basketProduct.count}</span>

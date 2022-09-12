@@ -109,7 +109,7 @@ function ShopContent({
                 />
                 <div className='search_button' onClick={() => closeSearch()}></div>
             </div>
-            <div className='shop'>
+            <div className='shop' onClick={() => setIsFiltrationMenuOpen(false)}>
                 <div className='container'>
                     <div className='shop_inner'>
                         <div className='shop_inner_title'>
@@ -193,7 +193,7 @@ function ShopContent({
                             </div> : <></>
                         }
                         <div className='shop_inner_menu_open' onClick={() => setIsFiltrationMenuOpen(true)}>Фільтрація</div>
-                        <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'}>
+                        <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
                             {isFiltrationMenuOpen ? <style jsx global>{`
                                 body {
                                     overflow: hidden!important;
@@ -244,7 +244,7 @@ function ShopContent({
                                     <img className='shop_inner_products_product_img' src={product.image} />
                                     <div className='shop_inner_products_product_content'>
                                         <div className='shop_inner_products_product_content_name'>{product.name}</div>
-                                        <div className='shop_inner_products_product_content_price'>{product.price} ₴</div>
+                                        <div className='shop_inner_products_product_content_price'>{product.price} $</div>
                                     </div>
                                 </div>
                             ) : <div className='shop_inner_message_products'>

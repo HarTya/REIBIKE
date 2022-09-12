@@ -98,7 +98,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                                     {product.available ? 'У наявності' : 'Під замовлення'}
                                 </div>
                             </div>
-                            <div className='shop_inner_products_product_page_content_price'>{product.price} ₴</div>
+                            <div className='shop_inner_products_product_page_content_price'>{product.price} $ (долар, без урахування доставки)</div>
                             <div className='shop_inner_products_product_page_content_buy'>
                                 <div 
                                     onClick={() => {addProductToBasket(); dispatch(setBurgerMenuState(true))}} 
