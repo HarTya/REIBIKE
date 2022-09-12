@@ -192,7 +192,7 @@ function ShopContent({
                                 </div> 
                             </div> : <></>
                         }
-                        <div className='shop_inner_menu_open' onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(true)}}>Фільтрація</div>
+                        <div className='shop_inner_menu_open' onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(!isFiltrationMenuOpen)}}>Фільтрація</div>
                         <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
                             {isFiltrationMenuOpen ? <style jsx global>{`
                                 body {
@@ -205,37 +205,38 @@ function ShopContent({
                             <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
                                 <div className='shop_inner_menu_close_arrow'></div>
                             </div>
-                            <div className='shop_inner_brands'>
-                                <div 
-                                    className={idOfCurrentBrand === 1 ? 'shop_inner_brands_button-active shop_inner_brands_button' : 'shop_inner_brands_button'} 
-                                    onClick={() => {setIsFiltrationMenuOpen(false); showAllProducts()}}
-                                >
-                                    Показати всі
-                                </div>
-                                {brands.length ? brands.map(brand => 
+                            <div className='shop_inner_menu_inner'>
+                                <div className='shop_inner_brands'>
                                     <div 
-                                        key={brand.id} 
-                                        onClick={() => {setIsFiltrationMenuOpen(false); productsWithCurrentBrand(brand.id)}} 
-                                        className={idOfCurrentBrand === brand.id ? 'shop_inner_brands_brand-active shop_inner_brands_brand' : 'shop_inner_brands_brand'}
+                                        className={idOfCurrentBrand === 1 ? 'shop_inner_brands_button-active shop_inner_brands_button' : 'shop_inner_brands_button'} 
+                                        onClick={() => {setIsFiltrationMenuOpen(false); showAllProducts()}}
                                     >
-                                        {brand.name}
+                                        Показати всі
                                     </div>
-                                ) : <div className='shop_inner_message shop_inner_select_message'>Бренди відсутні</div>}
-                            </div>
-                            <div className='shop_inner_sort'>
-                                <div className='shop_inner_sort_text'>Сортувати:</div>
-                                <PriceSortButtons
-                                    setIsFiltrationMenuOpen={setIsFiltrationMenuOpen}
-                                    productsState={productsState} 
-                                    setProductsState={setProductsState} 
-                                    unfilteredProducts={unfilteredProducts}
-                                    isBottomPriceActive={isBottomPriceActive}
-                                    setIsBottomPriceActive={setIsBottomPriceActive}
-                                    isTopPriceActive={isTopPriceActive}
-                                    setIsTopPriceActive={setIsTopPriceActive}
-                                    isRecommendedProductsActive={isRecommendedProductsActive}
-                                    setIsRecommendedProductsActive={setIsRecommendedProductsActive}
-                                />
+                                    {brands.length ? brands.map(brand => 
+                                        <div 
+                                            key={brand.id} 
+                                            onClick={() => {setIsFiltrationMenuOpen(false); productsWithCurrentBrand(brand.id)}} 
+                                            className={idOfCurrentBrand === brand.id ? 'shop_inner_brands_brand-active shop_inner_brands_brand' : 'shop_inner_brands_brand'}
+                                        >
+                                            {brand.name}
+                                        </div>
+                                    ) : <div className='shop_inner_message shop_inner_select_message'>Бренди відсутні</div>}
+                                </div>
+                                <div className='shop_inner_sort'>
+                                    <div className='shop_inner_sort_text'>Сортувати:</div>
+                                    <PriceSortButtons
+                                        productsState={productsState} 
+                                        setProductsState={setProductsState} 
+                                        unfilteredProducts={unfilteredProducts}
+                                        isBottomPriceActive={isBottomPriceActive}
+                                        setIsBottomPriceActive={setIsBottomPriceActive}
+                                        isTopPriceActive={isTopPriceActive}
+                                        setIsTopPriceActive={setIsTopPriceActive}
+                                        isRecommendedProductsActive={isRecommendedProductsActive}
+                                        setIsRecommendedProductsActive={setIsRecommendedProductsActive}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className='shop_inner_products' ref={productsRef}>

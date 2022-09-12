@@ -14,7 +14,7 @@ function Order(): ReactElement {
             if (burgerMenuState) {
                 dispatch(setBurgerMenuState(false))
             }
-        }, 600);
+        }, 700);
 
         return () => clearTimeout(Debounce)
     }, [])

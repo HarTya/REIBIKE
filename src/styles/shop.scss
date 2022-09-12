@@ -145,6 +145,10 @@
             &_close {
                 display: none;
             }
+            &_inner {
+                display: flex;
+                flex-direction: column;
+            }
         }
         &_brands {
             width: 100%;
@@ -347,6 +351,11 @@
                             font-family: 'Segoe UI', sans-serif;
                             font-style: normal;
                             line-height: 1;
+                            display: flex;
+                            flex-direction: column;
+                            span {
+                                font-size: 20px;
+                            }
                         }
                         &_buy {
                             width: 100%;

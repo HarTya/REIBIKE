@@ -4,7 +4,6 @@ import RecommendedProductsIcon from './icons/RecommendedProductsIcon';
 import TopPriceIcon from './icons/TopPriceIcon';
 
 function PriceSortButtons({
-    setIsFiltrationMenuOpen = null,
     productsState = null, 
     setProductsState = null,
     unfilteredProducts = null,
@@ -38,7 +37,6 @@ function PriceSortButtons({
         setIsTopPriceActive(false)
         setIsRecommendedProductsActive(false)
         setProductsState(filteredProductsToBottomPrice)
-        setIsFiltrationMenuOpen(false)
     }
 
     function topPriceProducts() {
@@ -46,7 +44,6 @@ function PriceSortButtons({
         setIsTopPriceActive(true)
         setIsRecommendedProductsActive(false)
         setProductsState(filteredProductsToTopPrice)
-        setIsFiltrationMenuOpen(false)
     }
 
     function recommendedProducts() {
@@ -54,7 +51,6 @@ function PriceSortButtons({
         setIsTopPriceActive(false)
         setIsRecommendedProductsActive(true)
         setProductsState(unfilteredProducts)
-        setIsFiltrationMenuOpen(false)
     }
 
     return (
