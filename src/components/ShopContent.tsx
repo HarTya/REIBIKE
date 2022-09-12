@@ -192,7 +192,7 @@ function ShopContent({
                                 </div> 
                             </div> : <></>
                         }
-                        <div className='shop_inner_menu_open' onClick={() => setIsFiltrationMenuOpen(true)}>Фільтрація</div>
+                        <div className='shop_inner_menu_open' onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(true)}}>Фільтрація</div>
                         <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
                             {isFiltrationMenuOpen ? <style jsx global>{`
                                 body {
@@ -202,7 +202,7 @@ function ShopContent({
                                     overflow: hidden!important;
                                 }
                             `}</style> : <></>}
-                            <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={() => setIsFiltrationMenuOpen(false)}>
+                            <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
                                 <div className='shop_inner_menu_close_arrow'></div>
                             </div>
                             <div className='shop_inner_brands'>
