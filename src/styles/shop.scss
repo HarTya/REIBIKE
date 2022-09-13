@@ -351,10 +351,11 @@
                             font-family: 'Segoe UI', sans-serif;
                             font-style: normal;
                             line-height: 1;
-                            display: flex;
-                            flex-direction: column;
                             span {
-                                font-size: 20px;
+                                &::after {
+                                    content: 'USA';
+                                    font-size: 10px;
+                                }
                             }
                         }
                         &_buy {

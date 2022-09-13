@@ -184,7 +184,7 @@ function Header(): ReactElement {
             </div>
             <Modal visible={basketState} setVisible={setBasketState}>
                 <div className='basket_products'>
-                    {basketProducts.length ? <div className='basket_products_totalPrice'>Всього: {totalPrice} $</div> : <></>}
+                    {basketProducts.length ? <div className='basket_products_totalPrice'>Всього: {totalPrice} $ <span>(без урахування доставки)</span></div> : <></>}
                     <span className='basket_icon'><BasketIcon /></span>
                     {basketProducts.length ? basketProducts.map(basketProduct =>
                         <div 
