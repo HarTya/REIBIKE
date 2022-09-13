@@ -351,12 +351,6 @@
                             font-family: 'Segoe UI', sans-serif;
                             font-style: normal;
                             line-height: 1;
-                            span {
-                                &::after {
-                                    content: 'USA';
-                                    font-size: 10px;
-                                }
-                            }
                         }
                         &_buy {
                             width: 100%;
@@ -412,6 +406,7 @@
                             font-weight: 500;
                             &_description {
                                 color: var(--main-08);
+                                font-size: 24px;
                             }
                             &_сharacteristics {
                                 width: 100%;
