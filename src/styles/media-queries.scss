@@ -540,6 +540,17 @@
         }
     }
 
+    .buy {
+        &_inner_inputs {
+            &_inputContact {
+                font-size: 22.5px;
+            }
+            &_inputComment {
+                font-size: 22.5px;
+            }
+        }
+    }
+
     .anythingForYourHobby {
         background: url(../images/index/anythingForYourHobby/bg-mobile.jpg) center no-repeat;
         &_inner {
@@ -989,7 +1000,7 @@
     .buy {
         &_inner {
             &_title {
-                font-size: 40px!important;
+                font-size: 30px!important;
             }
             &_inputs {
                 width: 100%;
@@ -1001,11 +1012,6 @@
                     width: 100%;
                     font-size: 20px;
                 }
-            }
-            &_button {
-                min-width: 200px!important;
-                min-height: 50px!important;
-                font-size: 20px!important;
             }
         }
     }
@@ -1041,33 +1047,39 @@
         }
         &_buy_button {
             width: 100%;
-            font-size: 22px;
+            font-size: 20px;
+            border-radius: 25px;
         }
     }
 
     .buy {
         &_inner {
             &_title {
-                font-size: 30px!important;
+                font-size: 25px!important;
             }
             &_inputs {
                 &_inputContact {
-                    font-size: 25px;
-                    padding: 10px 15px!important;
+                    font-size: 20px;
+                    padding: 15px!important;
                     &_placeholder {
                         width: 100%;
                         padding: 20px;
+                        font-size: 17px;
                     }
                 }
                 &_inputComment {
-                    font-size: 25px;
+                    font-size: 20px;
                     padding: 10px 15px!important;
                     border-radius: 35px;
                     &_placeholder {
                         width: 100%;
                         padding: 20px;
+                        font-size: 17px;
                     }
                 }
+            }
+            &_button {
+                font-size: 20px;
             }
         }
     }
@@ -1354,7 +1366,7 @@
     }
     
     .modal_content {
-        padding: 110px 30px 90px 30px;
+        padding: 90px 30px 50px 30px;
     }
 
     .order {
@@ -1430,11 +1442,17 @@
     .buy {
         &_inner {
             &_inputs {
-                &_inputContact_placeholder {
+                &_inputContact {
                     font-size: 18px;
+                    &_placeholder {
+                        font-size: 15px;
+                    }
                 }
-                &_inputComment_placeholder {
+                &_inputComment {
                     font-size: 18px;
+                    &_placeholder {
+                        font-size: 15px;
+                    }
                 }
             }
             &_button {
@@ -1511,7 +1529,7 @@
     }
 
     .modal_content {
-        padding: 100px 25px 80px 25px;
+        padding: 90px 25px 50px 25px;
     }
 
     .admin {

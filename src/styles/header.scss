@@ -312,7 +312,7 @@
 .buy {
     &_inner {
         &_title {
-            font-size: 50px;
+            font-size: 40px;
             font-weight: bold;
             color: #1C1C1C;
             text-align: center;
@@ -330,13 +330,13 @@
             }
             &_inputContact {
                 width: 100%;
-                padding: 10px 35px;
+                padding: 15px 35px;
                 background-color: #F5F5F5;
                 border: none;
                 margin-bottom: 20px;
                 color: #1C1C1C;
                 border-radius: 50px;
-                font-size: 28px;
+                font-size: 25px;
                 transition: all 0.4s ease-in-out;
                 position: relative;
                 &_placeholder {
@@ -350,7 +350,7 @@
                     align-items: center;
                     color: #1C1C1C;
                     pointer-events: none;
-                    font-size: 24px;
+                    font-size: 23px;
                     opacity: 0.6;
                     font-weight: 700;
                     text-align: center;
@@ -376,7 +376,7 @@
                 margin-bottom: 20px;
                 color: #1C1C1C;
                 border-radius: 50px;
-                font-size: 28px;
+                font-size: 25px;
                 transition: all 0.4s ease-in-out;
                 position: relative;
                 &_placeholder {
@@ -389,7 +389,7 @@
                     align-items: center;
                     color: #1C1C1C;
                     pointer-events: none;
-                    font-size: 24px;
+                    font-size: 23px;
                     opacity: 0.6;
                     font-weight: 700;
                     text-align: center;
@@ -404,15 +404,23 @@
         }
         &_button {
             cursor: pointer;
-            min-width: 250px;
-            min-height: 60px;
+            width: 200px;
+            height: 50px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 25px;
-            background: #1C1C1C;
+            font-size: 22px;
+            background-color: #1C1C1C;
             border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.4s ease-in-out;
             margin: 0 auto;
+            &:hover {
+                color: #00C897;
+                background-color: white;
+                border: 2px solid #00C897;
+                transform: scale(1.1);
+            }
         }
     }
 }

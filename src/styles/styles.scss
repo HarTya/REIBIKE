@@ -32,7 +32,7 @@ html, body {
 
 body {
     &::-webkit-scrollbar {
-        display: none;
+        display: none!important;
     }
     margin: 0;
     font-family: 'Raleway', sans-serif;
