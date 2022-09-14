@@ -250,7 +250,10 @@
                         padding: 20px!important;
                         &:hover {
                             &::after {
-                                width: 10%!important;
+                                width: 10%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                bottom: 5px;
                             }
                         }
                     }
@@ -262,7 +265,10 @@
                         padding: 20px!important;
                         &:hover {
                             &::after {
-                                width: 10%!important;
+                                width: 10%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                bottom: 5px;
                             }
                         }
                         &:not(:last-child) {
@@ -289,6 +295,11 @@
                         &_text {
                             font-size: 25px!important;
                             padding: 20px;
+                            & a:hover {
+                                &::after {
+                                    bottom: 5px;
+                                }
+                            }
                         }
                     }
                 }
@@ -1127,19 +1138,51 @@
         }
     }
 
-    .footer_inner_information {
-        &_contacts_contact {
-            flex-direction: column;
-            margin: 0 auto;
-            &_text {
-                word-break: break-all;
-                margin: 0!important;
-                text-align: center;
+    .footer_inner {
+        &_help {
+            &_title {
+                font-size: 20px;
+            }
+            &_contact a {
+                font-size: 25px;
             }
         }
-        &::after {
-            text-align: center;
-            margin: 0 auto;
+        &_quickLinks {
+            &_pages {
+                * {
+                    &:hover {
+                        &::after {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+            &_other {
+                * {
+                    &:hover {
+                        &::after {
+                            width: 25%;
+                        }
+                    }
+                }
+            }
+        }
+        &_information {
+            &_contacts_contact {
+                flex-direction: column;
+                margin: 0 auto;
+                &_text {
+                    margin: 0!important;
+                    text-align: center;
+                }
+                &:last-child {
+                    word-break: break-all;
+                }
+            }
+            &::after {
+                text-align: center;
+                margin: 0 auto;
+            }
         }
     }
 
