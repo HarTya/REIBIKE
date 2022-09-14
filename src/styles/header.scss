@@ -316,7 +316,11 @@
             font-weight: bold;
             color: #1C1C1C;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         &_inputs {
             width: 625px;
