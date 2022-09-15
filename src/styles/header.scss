@@ -106,7 +106,7 @@
                 justify-content: center;
                 align-items: center;
                 border: 1px solid black;
-                animation: BasketNotification 0.4s ease-in-out 1;
+                animation: BasketNotification 0.2s ease-in-out 1;
             }
         }
     }
@@ -414,7 +414,7 @@
             background-color: #1C1C1C;
             border-radius: 50px;
             border: 2px solid transparent;
-            transition: all 0.4s ease-in-out;
+            transition: all 0.2s ease-in-out;
             margin: 0 auto;
             padding: 15px;
             &:hover {
