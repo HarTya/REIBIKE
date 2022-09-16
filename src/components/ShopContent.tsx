@@ -94,6 +94,7 @@ function ShopContent({
         refreshSortPriceButtons()
         setProductsState(filteredProducts)
         if (searchQuery.length) {
+            setIsFiltrationMenuOpen(false)
             window.scroll(0, productsRef.current.offsetTop)
         }
     }, [searchQuery, unfilteredProducts])
