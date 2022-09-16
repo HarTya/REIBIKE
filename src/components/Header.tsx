@@ -79,6 +79,7 @@ function Header(): ReactElement {
     function deleteBasketProduct(basketProductId) {
         const updatedBasketProducts = basketProducts.filter(basketProduct => basketProduct.id !== basketProductId)
         dispatch(setBasketProducts(updatedBasketProducts))
+        dispatch(setNotificationCount(notificationCount - 1))
     }
 
     const [isBuyModalOpen, setIsBuyModalOpen] = useState(false);
@@ -114,6 +115,7 @@ function Header(): ReactElement {
                 setIsBuyModalOpen(false)
                 dispatch(setBasketState(false))
                 dispatch(setBasketProducts([]))
+                dispatch(setNotificationCount(0))
             })      
             .catch(error => {
                 setLoading(false)
@@ -173,7 +175,7 @@ function Header(): ReactElement {
                         <div className='header_icons_icon' onClick={() => openSearch()}>
                             <SearchIcon />
                         </div>
-                        <div className='header_icons_icon' onClick={() => {dispatch(setSearchState(false)); dispatch(setBurgerMenuState(false)); dispatch(setBasketState(true)); dispatch(setNotificationCount(0))}}>
+                        <div className='header_icons_icon' onClick={() => {dispatch(setSearchState(false)); dispatch(setBurgerMenuState(false)); dispatch(setBasketState(true))}}>
                             <BasketIcon />
                             {notificationCount ? <span className='header_icons_icon_notification'>
                                 {notificationCount}

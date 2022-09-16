@@ -329,9 +329,10 @@ function Admin(props): ReactElement {
 
     const [characteristicsState, setCharacteristicsState] = useState([]);
 
-    function openProductModal(productId, productImg, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId) {
+    function openProductModal(productId, productImg, productFullImg, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId) {
         setProductId(productId)
         setImage(productImg)
+        setFullImage(productFullImg)
         setProductName(productName)
         setProductPrice(productPrice)
         setProductDescription(productDescription)
@@ -495,6 +496,7 @@ function Admin(props): ReactElement {
                                 <div onClick={() => {
                                     setIsCreateProductModalOpen(true)
                                     setImage(null)
+                                    setFullImage(null)
                                     setProductId(null)
                                     setProductName('')
                                     setProductPrice('')
@@ -507,7 +509,7 @@ function Admin(props): ReactElement {
                                 <div className='admin_products_content'>
                                     {products.length ? products.map(product => 
                                         <div 
-                                            onClick={() => openProductModal(product.id, product.image, product.name, product.price, product.description, product.available, product.categoryId, product.subcategoryId, product.brandId)}
+                                            onClick={() => openProductModal(product.id, product.image, product.fullImage, product.name, product.price, product.description, product.available, product.categoryId, product.subcategoryId, product.brandId)}
                                             key={product.id} 
                                             className='admin_products_product' 
                                         >
