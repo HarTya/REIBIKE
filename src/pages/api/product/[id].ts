@@ -17,7 +17,8 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     async function changeProduct() {
         const { id, image, fullImage, name, price, description, available, categoryId, subcategoryId, brandId } = req.body;
 
-        if (!image && !fullImage) throw 'Оберіть картинку';
+        if (!image) throw 'Оберіть картинку';
+        if (!fullImage) throw 'Обріжте картинку';
 
         if (!name) throw 'Порожня назва';
         if (name.length < 20) throw 'Назва не менше ніж 20 символів';
