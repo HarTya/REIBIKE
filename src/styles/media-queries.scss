@@ -726,6 +726,10 @@
                 width: 350px;
                 min-width: 350px;
                 height: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                border-right: 1px solid #1C1C1C;
                 &-active {
                     left: 0!important;
                 }

@@ -19,8 +19,6 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
         if (!fullImage) throw 'Обріжте картинку';
 
         if (!name) throw 'Порожня назва';
-        if (name.length < 20) throw 'Назва не менше ніж 20 символів';
-        if (name.length > 50) throw 'Назва не більше ніж 50 символів';
 
         if (!price) throw 'Порожня ціна';
 
