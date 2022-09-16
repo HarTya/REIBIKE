@@ -21,7 +21,6 @@ function ShopContent({
     const router = useRouter();
 
     const productsRef = useRef<HTMLDivElement>();
-    const shopInnerRef = useRef<HTMLDivElement>();
 
     const [productsState, setProductsState] = useState(products);
     const [unfilteredProducts, setUnfilteredProducts] = useState(productsState);
@@ -92,6 +91,7 @@ function ShopContent({
 
     useEffect(() => {
         const filteredProducts = filterProducts(searchQuery, productsState)
+        refreshSortPriceButtons()
         setProductsState(filteredProducts)
         if (searchQuery.length) {
             window.scroll(0, productsRef.current.offsetTop)
