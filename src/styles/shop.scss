@@ -1,14 +1,63 @@
 .shop {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 45px;
     color: #1C1C1C;
     position: relative;
     background-color: white;
     &_inner {
+        padding-top: 45px;
+        &_menu {
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            min-width: 300px;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            overflow-y: auto;
+            overflow-x: hidden;
+            border-right: solid 1px var(--main);
+            z-index: 20;
+            padding-bottom: 20px;
+            &_open {
+                display: none;
+            }
+            &_close {
+                display: none;
+            }
+            &_inner {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .shop_inner_brands {
+                flex-wrap: nowrap;
+                flex-direction: column;
+                margin-top: 20px;
+                & > div {
+                    margin: 0;
+                    width: 100%;
+                    max-width: 100%;
+                    border-radius: 0;
+                    padding: 15px 0;
+                    background-color: white;
+                }
+                &_button {
+                    background-color: #3e3e3e!important;
+                    &-active {
+                        background-color: #1C1C1C!important;
+                    }
+                }
+                &_brand-active {
+                    background-color: #1C1C1C!important;
+                }
+            }
+            .shop_inner_sort {
+                &_text {
+                    margin: 0 0 10px 0;
+                }
+                flex-direction: column;
+                margin-left: 0;
+            }
+        }
         &_title {
             display: flex;
             align-items: center;
@@ -136,18 +185,6 @@
                 padding: 10px 0;
                 margin: 10px;
                 transition: all 0.4s ease-in-out;
-            }
-        }
-        &_menu {
-            &_open {
-                display: none;
-            }
-            &_close {
-                display: none;
-            }
-            &_inner {
-                display: flex;
-                flex-direction: column;
             }
         }
         &_brands {

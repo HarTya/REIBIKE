@@ -166,8 +166,8 @@
     }
 
     .shop {
-        padding-top: 25px;
         &_inner {
+            padding-top: 25px;
             &_products {
                 margin-bottom: 5px;
                 &_product_page {
@@ -357,6 +357,9 @@
     }
 
     .shop_inner {
+        &_menu {
+            min-width: 33%;
+        }
         &_title_text {
             font-size: 40px;
         }
@@ -717,20 +720,12 @@
                 font-size: 35px;
             }
             &_menu {
-                &::-webkit-scrollbar {
-                    display: none;
-                }
                 position: fixed;
                 top: 0;
                 left: -350px;
                 width: 350px;
+                min-width: 350px;
                 height: 100%;
-                background-color: white;
-                transition: all 0.2s ease-in-out;
-                overflow-y: auto;
-                overflow-x: hidden;
-                border-right: solid 1px var(--main);
-                z-index: 20;
                 &-active {
                     left: 0!important;
                 }
@@ -773,30 +768,8 @@
                         transform: rotate(135deg);
                     }
                 }
-                &_inner {
-                    display: flex;
-                    flex-direction: column-reverse;
-                }
                 .shop_inner_brands {
-                    flex-wrap: nowrap;
-                    flex-direction: column;
-                    & > div {
-                        margin: 0;
-                        width: 100%;
-                        max-width: 100%;
-                        border-radius: 0;
-                        padding: 15px 0;
-                        background-color: white;
-                    }
-                    &_button {
-                        background-color: #3e3e3e!important;
-                        &-active {
-                            background-color: #1C1C1C!important;
-                        }
-                    }
-                    &_brand-active {
-                        background-color: #1C1C1C!important;
-                    }
+                    margin-top: 0;
                 }
                 .shop_inner_sort {
                     position: relative;
@@ -1239,6 +1212,7 @@
             }
             &_menu {
                 width: 240px;
+                min-width: 240px;
                 left: -240px;
                 &_open {
                     font-size: 23px;
