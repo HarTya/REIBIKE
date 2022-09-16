@@ -116,6 +116,7 @@ function Header(): ReactElement {
                 dispatch(setBasketProducts([]))
             })      
             .catch(error => {
+                setLoading(false)
                 setError(error)
             });
     };

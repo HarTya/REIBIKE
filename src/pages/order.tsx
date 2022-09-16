@@ -46,6 +46,7 @@ function Order(): ReactElement {
                 setSuccess(`Замовлення відправлено, ми зв'яжемося з вами за вказаними контактними даними`)
             })      
             .catch(error => {
+                setLoading(false)
                 setError(error)
             });
     };
