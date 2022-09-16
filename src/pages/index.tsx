@@ -57,7 +57,7 @@ function Index(): ReactElement {
                             <div className='whyAreWe_inner_cards_card'>
                                 <Image src={whyAreWeIcon1} width={200} height={200} />
                                 <div className='whyAreWe_inner_cards_card_title'>Що завгодно звідки <br />завгодно</div>
-                                <div className='whyAreWe_inner_cards_card_subtitle'>Ви з легкістю можете замовити запчастину яку ви не знайдете ніде в іншому місті, також ви можете замовити навіть щось не пов’язане з велоіндустієй</div>
+                                <div className='whyAreWe_inner_cards_card_subtitle'>Ви з легкістю можете замовити запчастину яку ви не знайдете ніде в іншому місті</div>
                             </div>
                             <div className='whyAreWe_inner_cards_card'>
                                 <Image src={whyAreWeIcon2} width={200} height={200} />
