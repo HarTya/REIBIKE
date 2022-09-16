@@ -258,6 +258,7 @@ function Admin(props): ReactElement {
     const [isCreateProductModalOpen, setIsCreateProductModalOpen] = useState(false);
     const [isCategoryModalOpenProduct, setIsCategoryModalOpenProduct] = useState(false);
 
+    const [fullImage, setFullImage] = useState(null);
     const [image, setImage] = useState(null);
 
     function handleOnChangeFileInput(event) {
@@ -280,6 +281,7 @@ function Admin(props): ReactElement {
         formData.append('upload_preset', process.env.CLOUDINARY_PRESET_NAME)
 
         const data = await fetch(process.env.CLOUDINARY_REQ_URL, { method: 'POST', body: formData }).then(res => res.json());
+        setFullImage(process.env.CLOUDINARY_RES_URL.replace('w_500,h_500,c_fill/', '') + 'v' + data.version + '/' + data.public_id)
         setImage(process.env.CLOUDINARY_RES_URL + 'v' + data.version + '/' + data.public_id)
         setLoading(false)
     }
@@ -310,7 +312,7 @@ function Admin(props): ReactElement {
         setLoading(true)
         setError('')
 
-        return productService.createProduct(image, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
+        return productService.createProduct(image, fullImage, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
             .then(() => Router.reload())
             .finally(() => window.scroll(0, 0))
             .catch(error => {
@@ -348,7 +350,7 @@ function Admin(props): ReactElement {
         setLoading(true)
         setError('')
 
-        return productService.changeProduct(productId, image, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
+        return productService.changeProduct(productId, image, fullImage, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
             .then(() => Router.reload())
             .finally(() => window.scroll(0, 0))
             .catch(error => {

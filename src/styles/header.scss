@@ -226,8 +226,9 @@
             }
             & > img {
                 border-radius: 25px 0 0 25px;
-                height: 170px;
-                width: 170px;
+                max-height: 200px;
+                max-width: 200px;
+                vertical-align: middle;
             }
             &_content {
                 padding: 0 20px;

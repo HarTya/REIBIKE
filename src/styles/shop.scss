@@ -302,7 +302,7 @@
                 justify-content: center;
                 &_img {
                     width: 100%!important;
-                    height: 290px!important;
+                    height: 275px!important;
                     border-radius: 25px 25px 0 0!important;
                 }
                 &_content {
@@ -341,8 +341,9 @@
                     }
                     &_img {
                         margin-right: 50px;
-                        width: 500px;
-                        height: 500px;
+                        max-width: 500px;
+                        max-height: 500px;
+                        vertical-align: middle;
                         background-color: #D9D9D9;
                         border-radius: 25px;
                     }

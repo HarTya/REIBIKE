@@ -10,6 +10,7 @@ generator client {
 model Product {
   id                String            @default(cuid()) @id
   image             String
+  fullImage         String
   name              String            @unique
   price             Int
   description       String

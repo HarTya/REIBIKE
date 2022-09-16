@@ -13,9 +13,9 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     async function createProduct() {
-        const { image, name, price, description, available, categoryId, subcategoryId, brandId } = req.body;
+        const { image, fullImage, name, price, description, available, categoryId, subcategoryId, brandId } = req.body;
 
-        if (!image) throw 'Оберіть картинку';
+        if (!image && !fullImage) throw 'Оберіть картинку';
 
         if (!name) throw 'Порожня назва';
         if (name.length < 20) throw 'Назва не менше ніж 20 символів';
@@ -35,6 +35,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
         const result = await prisma.product.create({
             data: {
                 image,
+                fullImage,
                 name,
                 price: priceNum,
                 description,
