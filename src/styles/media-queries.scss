@@ -1384,7 +1384,7 @@
     }
 
     .order {
-        height: 750px!important;
+        height: 700px!important;
         &_inner {
             &_title {
                 font-size: 34px!important;
@@ -1604,21 +1604,37 @@
     }
 
     .order {
-        height: 850px!important;
         &_inner {
+            &_title {
+                font-size: 25px!important;
+            }
+            &_subtitle {
+                font-size: 15px!important;
+            }
             &_inputs {
-                &_inputLink_placeholder {
-                    font-size: 14px;
+                &_inputLink {
+                    font-size: 18px;
+                    &_placeholder {
+                        font-size: 14px;
+                    }
                 }
-                &_inputContact_placeholder {
-                    font-size: 14px;
+                &_inputContact {
+                    font-size: 18px;
+                    &_placeholder {
+                        font-size: 14px;
+                    }
                 }
-                &_inputComment_placeholder {
-                    font-size: 14px;
+                &_inputComment {
+                    font-size: 18px;
+                    &_placeholder {
+                        font-size: 14px;
+                    }
                 }
             }
             &_button {
                 width: 100%!important;
+                height: 40px!important;
+                font-size: 18px!important;
             }
         }
     }

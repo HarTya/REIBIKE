@@ -116,7 +116,6 @@ function Header(): ReactElement {
                 dispatch(setBasketProducts([]))
             })      
             .catch(error => {
-                setLoading(false)
                 setError(error)
             });
     };
@@ -216,16 +215,7 @@ function Header(): ReactElement {
                 {basketProducts.length ? 
                     <>
                         <div className='buy_inner_title'>Оформлення замовлення</div>
-                        {loading ? 
-                            <>
-                                <style jsx global>{`
-                                    .buy_inner_title {
-                                        margin-bottom: 0!important;
-                                    }
-                                `}</style>
-                                <Loader /> 
-                            </>
-                            :
+                        {loading ? <Loader /> :
                             <>
                                 <div className='buy_inner_inputs'>
                                     <div>
