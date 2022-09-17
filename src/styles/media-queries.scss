@@ -168,6 +168,15 @@
     .shop {
         &_inner {
             padding-top: 25px;
+            &_categories {
+                justify-content: center;
+            }
+            &_subcategories {
+                justify-content: center;
+            }
+            &_brands {
+                justify-content: center;
+            }
             &_products {
                 margin-bottom: 5px;
                 &_product_page {
@@ -404,15 +413,6 @@
             }
             &_title_text {
                 font-size: 40px;
-            }
-            &_categories {
-                justify-content: center;
-            }
-            &_subcategories {
-                justify-content: center;
-            }
-            &_brands {
-                justify-content: center;
             }
             &_sort {
                 justify-content: center!important;
