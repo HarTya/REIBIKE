@@ -13,7 +13,7 @@
             &::-webkit-scrollbar {
                 display: none;
             }
-            margin: 10px;
+            margin: 10px 10px 10px 30px;
             min-width: 300px;
             background-color: white;
             transition: all 0.2s ease-in-out;
@@ -22,7 +22,7 @@
             z-index: 20;
             padding-bottom: 20px;
             border-radius: 25px;
-            box-shadow: 1px 1px 10px var(--main);
+            border: 1px solid #1C1C1C;
             &_open {
                 display: none;
             }
@@ -349,7 +349,7 @@
                     }
                     &_img {
                         margin-right: 50px;
-                        max-width: 500px;
+                        max-width: 100%;
                         max-height: 500px;
                         vertical-align: middle;
                         background-color: #D9D9D9;

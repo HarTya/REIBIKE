@@ -388,7 +388,7 @@ function Admin(props): ReactElement {
         setError('')
 
         return characteristicService.createCharacteristic(characteristicTitleValue, characteristicContentValue, productId)
-            .then(() => Router.reload())
+            .then(() => {setLoading(false); setCharacteristicTitleValue(''); setCharacteristicContentValue('')})
             .finally(() => window.scroll(0, 0))
             .catch(error => {
                 setLoading(false)
