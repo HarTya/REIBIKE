@@ -1261,6 +1261,7 @@
                         }
                     }
                     &_page {
+                        padding: 0 0 25px 0 !important;
                         &_img {
                             max-width: 100vw!important;
                             border-radius: 0;
@@ -1667,5 +1668,9 @@
                 font-size: 18px!important;
             }
         }
+    }
+
+    .help_ua {
+        font-size: 20px;
     }
 }

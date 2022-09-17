@@ -48,10 +48,7 @@ function Footer(): ReactElement {
                     </div>
                 </div>
             </div>
-            <div className='help_ua'>
-                <div className='help_ua_title'>Допомога ЗСУ</div>
-                <div className='help_ua_contact'><a href='https://shtd.org/' target={'_blank'}>Офіційний сайт “Шо ти, Дядя?”</a></div>
-            </div>
+            <div className='help_ua'><a href='https://shtd.org/' target={'_blank'}><span>Волонтерська група</span> “Шо ти, Дядя?”</a></div>
         </footer>
     )
 }

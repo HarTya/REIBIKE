@@ -53,37 +53,32 @@ body {
 }
 
 .help_ua {
-    margin: 50px 0;
+    margin: 35px 0 50px 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    &_title {
-        font-size: 22px;
-        opacity: 0.8;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    span {
+        opacity: 0.75;
     }
-    &_contact {
-        width: 100%;
-        margin-top: 10px;
-        font-size: 24px;
-        text-align: center;
-        position: relative;
-        & a {
-            color: white;
-        }
-        &:hover {
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                width: 33.33333%;
-                height: 2px;
-                background-color: white;
-                border-radius: 10px;
-                animation: FooterUnderline 0.4s ease 1;
-            }
+    & a {
+        color: white;
+    }
+    &:hover {
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 33.33333%;
+            height: 2px;
+            background-color: white;
+            border-radius: 10px;
+            animation: FooterUnderline 0.4s ease 1;
         }
     }
 }
