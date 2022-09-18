@@ -408,9 +408,6 @@
                     width: 250px;
                 }
             }
-            &_menu {
-                min-width: 33%;
-            }
             &_title_text {
                 font-size: 40px;
             }
@@ -730,8 +727,13 @@
 
     .shop {
         &_inner {
+            margin-left: 0!important;
             &_message {
                 font-size: 28px!important;
+                &_products {
+                    margin: 25px 0;
+                    height: auto!important;
+                }
             }
             &_title_text {
                 font-size: 35px;
@@ -739,9 +741,7 @@
             &_menu {
                 position: fixed;
                 top: 0;
-                left: -350px;
-                width: 350px;
-                min-width: 350px;
+                left: -185px;
                 height: 100%;
                 margin: 0;
                 border-radius: 0;
@@ -767,9 +767,9 @@
                     display: block;
                     cursor: pointer;
                     position: fixed;
-                    left: -350px;
+                    left: -185px;
                     top: 85px;
-                    width: 350px;
+                    width: 185px;
                     height: 50px;
                     padding: 12.5px;
                     background-color: white;
@@ -794,8 +794,8 @@
                 }
                 .shop_inner_sort {
                     position: relative;
-                    top: 115px;
-                    margin-bottom: 130px;
+                    top: 120px;
+                    margin-bottom: 135px;
                 }
             }
             &_select {
@@ -1187,6 +1187,9 @@
 
     .shop {
         &_inner {
+            &_menu_open {
+                width: 240px;
+            }
             &_title {
                 &_nav {
                     margin-bottom: 5px;
@@ -1230,19 +1233,6 @@
                 margin: 20px 0!important;
                 padding: 22px 0!important;
                 font-size: 22px!important;
-            }
-            &_menu {
-                width: 240px;
-                min-width: 240px;
-                left: -240px;
-                &_open {
-                    font-size: 23px;
-                    width: 240px;
-                }
-                &_close {
-                    width: 240px;
-                    left: -240px;
-                }
             }
             &_products {
                 margin-bottom: 25px!important;
@@ -1539,6 +1529,7 @@
         &_products_product {
             &_content_name {
                 font-size: 20px!important;
+                min-height: 44px;
             }
             &_content_price {
                 font-size: 22px!important;

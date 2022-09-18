@@ -8,12 +8,15 @@
         padding: 0 30px;
     }
     &_inner {
+        margin-left: 185px;
         padding-top: 45px;
         &_menu {
             &::-webkit-scrollbar {
                 display: none;
             }
-            min-width: 300px;
+            position: fixed;
+            width: 185px;
+            height: calc(100% - 85px);
             background-color: white;
             transition: all 0.2s ease-in-out;
             overflow-y: auto;
@@ -40,8 +43,9 @@
                     width: 100%;
                     max-width: 100%;
                     border-radius: 0;
-                    padding: 15px 0;
+                    padding: 15px;
                     background-color: white;
+                    text-align: left;
                 }
                 &_button {
                     background-color: #3e3e3e!important;
@@ -59,6 +63,8 @@
                 }
                 flex-direction: column;
                 margin-left: 0;
+                align-items: flex-start;
+                padding: 0 15px;
             }
         }
         &_title {
@@ -109,6 +115,7 @@
             transition: all 0.4s ease-in-out!important;
             &_products {
                 width: 445px;
+                height: 50vh;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -136,6 +143,7 @@
                     background: #1C1C1C;
                     color: white;
                     border-radius: 50px;
+                    padding: 15px;
                 }
             }
         }

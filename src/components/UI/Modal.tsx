@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react';
 import { useDispatch } from 'react-redux';
 import { setBasketState } from 'src/store/basketSlice';
-import BasketIcon from './icons/BasketIcon';
 import ExitCross from './icons/ExitCrossIcon';
 
 function Modal({ children, visible, setVisible }): ReactElement {

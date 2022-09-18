@@ -113,14 +113,6 @@ function ShopContent({
             </div>
             <div className='shop' onClick={() => setIsFiltrationMenuOpen(false)}>
                 <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
-                    {isFiltrationMenuOpen ? <style jsx global>{`
-                        body {
-                            overflow: hidden!important;
-                        }
-                        #__next {
-                            overflow: hidden!important;
-                        }
-                    `}</style> : <></>}
                     <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
                         <div className='shop_inner_menu_close_arrow'></div>
                     </div>
