@@ -739,10 +739,8 @@
                 font-size: 35px;
             }
             &_menu {
-                position: fixed;
-                top: 0;
+                position: absolute;
                 left: -185px;
-                height: 100%;
                 margin: 0;
                 border-radius: 0;
                 border: none;
@@ -766,9 +764,8 @@
                 &_close {
                     display: block;
                     cursor: pointer;
-                    position: fixed;
+                    position: relative;
                     left: -185px;
-                    top: 85px;
                     width: 185px;
                     height: 50px;
                     padding: 12.5px;
@@ -789,13 +786,8 @@
                         transform: rotate(135deg);
                     }
                 }
-                .shop_inner_brands {
-                    margin-top: 0;
-                }
                 .shop_inner_sort {
-                    position: relative;
-                    top: 120px;
-                    margin-bottom: 135px;
+                    margin-top: 15px;
                 }
             }
             &_select {
@@ -1529,7 +1521,7 @@
         &_products_product {
             &_content_name {
                 font-size: 20px!important;
-                min-height: 44px;
+                min-height: 43px;
             }
             &_content_price {
                 font-size: 22px!important;
