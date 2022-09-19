@@ -21,16 +21,30 @@ function ShopContent({
     const router = useRouter();
 
     const productsRef = useRef<HTMLDivElement>();
+    const shopInnerMenu = useRef<HTMLDivElement>();
+    const observableSection = useRef<HTMLDivElement>();
+    const observer = useRef<any>();
 
-    const [scrollTopOffset, setScrollTopOffset] = useState(0);
+    const [menuScrollTopOffset, setMenuScrollTopOffset] = useState(0);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setScrollTopOffset(window.pageYOffset)
-        }, 1);
+        var callback = function(entries) {
+            document.addEventListener('scroll', () => {
+                if (entries[0].isIntersecting) {
+                    return setMenuScrollTopOffset(
+                        window.scrollY === 0 ? 0
+                        : observableSection.current.offsetTop - window.innerHeight
+                    )
+                }
+                setMenuScrollTopOffset(window.scrollY)
+            })
+        };
 
-        return () => clearInterval(interval)
-    }, [scrollTopOffset])
+        observer.current = new IntersectionObserver(callback);
+        observer.current.observe(observableSection.current)
+
+        return () => document.removeEventListener('scroll', () => {}) 
+    }, [])
 
     const [productsState, setProductsState] = useState(products);
     const [unfilteredProducts, setUnfilteredProducts] = useState(productsState);
@@ -117,15 +131,15 @@ function ShopContent({
                     className='search_input'
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder='Пошук'
+                    placeholder='Пошук у каталозі'
                 />
                 <div className='search_button' onClick={() => closeSearch()}></div>
             </div>
             <div className='shop' onClick={() => setIsFiltrationMenuOpen(false)}>
-                <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
+                <div ref={shopInnerMenu} className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
                     <style jsx global>{`
                         .shop_inner_menu {
-                            transform: translate3d(0, ${scrollTopOffset}px, 0)!important;
+                            transform: translate3d(0, ${menuScrollTopOffset}px, 0)!important;
                         }
                     `}</style>
                     <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
@@ -135,14 +149,14 @@ function ShopContent({
                         <div className='shop_inner_brands'>
                             <div 
                                 className={idOfCurrentBrand === 1 ? 'shop_inner_brands_button-active shop_inner_brands_button' : 'shop_inner_brands_button'} 
-                                onClick={() => {setIsFiltrationMenuOpen(false); showAllProducts()}}
+                                onClick={() => {setIsFiltrationMenuOpen(false); showAllProducts(); window.scroll(0, 0)}}
                             >
                                 Показати всі
                             </div>
                             {brands.length ? brands.map(brand => 
                                 <div 
                                     key={brand.id} 
-                                    onClick={() => {setIsFiltrationMenuOpen(false); productsWithCurrentBrand(brand.id)}} 
+                                    onClick={() => {setIsFiltrationMenuOpen(false); productsWithCurrentBrand(brand.id); window.scroll(0, 0)}} 
                                     className={idOfCurrentBrand === brand.id ? 'shop_inner_brands_brand-active shop_inner_brands_brand' : 'shop_inner_brands_brand'}
                                 >
                                     {brand.name}
@@ -165,7 +179,7 @@ function ShopContent({
                         </div>
                     </div>
                 </div>
-                <div className='shop_inner'>
+                <div className={isFiltrationMenuOpen ? 'shop_inner-active shop_inner' : 'shop_inner'}>
                     <div className='shop_inner_title'>
                         {isShopPage ? 
                             <div className='shop_inner_title_text'>Магазин</div> : isCategoryPage ? 
@@ -257,13 +271,14 @@ function ShopContent({
                                 </div>
                             </div>
                         ) : <div className='shop_inner_message_products'>
-                            <div className='shop_inner_message_products_title'>Товари відсутні</div>
-                            <div className='shop_inner_message_products_subtitle'>Але ви завжди можете знайти в інтернеті що вам потрібно та замовити залишив посилання</div>
-                            <div className='shop_inner_message_products_button' onClick={() => router.push('/order')}>Замовити</div>
-                        </div>}                            
+                                <div className='shop_inner_message_products_title'>Товари відсутні</div>
+                                <div className='shop_inner_message_products_subtitle'>Але ви завжди можете знайти в інтернеті що вам потрібно та замовити залишив посилання</div>
+                                <div className='shop_inner_message_products_button' onClick={() => router.push('/order')}>Замовити</div>
+                            </div>}                            
                     </div>
                 </div>
             </div>
+            <div ref={observableSection}></div>
         </Layout>
     )
 }

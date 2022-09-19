@@ -167,7 +167,7 @@
 
     .shop {
         &_inner {
-            padding-top: 25px;
+            padding: 25px 30px;
             &_categories {
                 justify-content: center;
             }
@@ -178,7 +178,6 @@
                 justify-content: center;
             }
             &_products {
-                margin-bottom: 5px;
                 &_product_page {
                     padding: 25px 0!important;
                     &_inner {
@@ -728,6 +727,11 @@
     .shop {
         &_inner {
             margin-left: 0!important;
+            border: none;
+            &-active {
+                left: 185px!important;
+                border-left: 1px solid #1C1C1C!important;
+            }
             &_message {
                 font-size: 28px!important;
                 &_products {
@@ -739,12 +743,10 @@
                 font-size: 35px;
             }
             &_menu {
-                position: absolute;
                 left: -185px;
                 margin: 0;
                 border-radius: 0;
                 border: none;
-                border-right: 1px solid #1C1C1C;
                 &-active {
                     left: 0!important;
                 }
@@ -769,8 +771,6 @@
                     width: 185px;
                     height: 50px;
                     padding: 12.5px;
-                    background-color: white;
-                    border-right: solid 1px var(--main);
                     transition: all 0.2s ease-in-out;
                     z-index: 21;
                     &-active {
@@ -1227,7 +1227,6 @@
                 font-size: 22px!important;
             }
             &_products {
-                margin-bottom: 25px!important;
                 &_product {
                     margin: 20px 0!important;
                     &_img {

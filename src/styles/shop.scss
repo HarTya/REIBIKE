@@ -1,5 +1,6 @@
 .shop {
-    width: 100%;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     color: #1C1C1C;
     position: relative;
@@ -8,10 +9,12 @@
         padding: 0 30px;
     }
     &_inner {
+        transition: all 0.2s ease-in-out;
         position: relative;
         margin-left: 185px;
-        padding: 45px 30px 0 30px;
+        padding: 45px 30px;
         border-left: 1px solid #1C1C1C;
+        width: 100%;
         &_menu {
             &::-webkit-scrollbar {
                 display: none;
@@ -19,12 +22,13 @@
             position: absolute;
             width: 185px;
             height: calc(100vh - 85px);
+            max-height: 100%;
             background-color: white;
             transition: all 0.2s ease-in-out;
             overflow-y: auto;
             overflow-x: hidden;
             z-index: 20;
-            padding-bottom: 1px;
+            padding-bottom: 20px;
             &_open {
                 display: none;
             }
@@ -116,12 +120,12 @@
             transition: all 0.4s ease-in-out!important;
             &_products {
                 width: 445px;
-                height: 50vh;
+                height: 100%;
+                margin-top: 50px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
-                margin: 20px 0;
                 &_title {
                     text-align: center;
                     font-size: 45px;
@@ -300,7 +304,6 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
             &_product {
                 cursor: pointer;
                 max-width: 275px;

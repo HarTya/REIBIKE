@@ -20,6 +20,9 @@
 
 #__next {
     overflow-x: hidden;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 #nprogress .spinner {
