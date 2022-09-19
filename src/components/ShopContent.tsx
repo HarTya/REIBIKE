@@ -36,6 +36,7 @@ function ShopContent({
                         : observableSection.current.offsetTop - window.innerHeight
                     )
                 }
+                setIsFiltrationMenuOpen(false)
                 setMenuScrollTopOffset(window.scrollY)
             })
         };
