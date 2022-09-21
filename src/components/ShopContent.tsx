@@ -28,7 +28,7 @@ function ShopContent({
 
     useEffect(() => {
         var callback = function(entries) {
-            document.addEventListener('scroll', async () => {
+            window.addEventListener('scroll', async () => {
                 if (entries[0].isIntersecting) {
                     return setMenuScrollTopOffset(
                         window.scrollY === 0 ? 0 :
