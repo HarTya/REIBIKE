@@ -31,12 +31,12 @@ function ShopContent({
             document.addEventListener('scroll', async () => {
                 if (entries[0].isIntersecting) {
                     return setMenuScrollTopOffset(
-                        window.scrollY === 0 ? 0
-                        : observableSection.current.offsetTop - window.innerHeight
+                        window.scrollY === 0 ? 0 :
+                        observableSection.current.offsetTop - window.innerHeight
                     )
                 }
-                setMenuScrollTopOffset(window.scrollY)
-            })
+                setMenuScrollTopOffset(0)
+            }, { passive: true })
         };
 
         observer.current = new IntersectionObserver(callback);
@@ -136,11 +136,12 @@ function ShopContent({
             </div>
             <div className='shop' onClick={() => setIsFiltrationMenuOpen(false)}>
                 <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
-                    <style jsx global>{`
+                    {menuScrollTopOffset ? <style jsx global>{`
                         .shop_inner_menu {
+                            position: absolute!important;
                             top: ${menuScrollTopOffset}px!important;
                         }
-                    `}</style>
+                    `}</style> : <></>}
                     <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
                         <div className='shop_inner_menu_close_arrow'></div>
                     </div>
