@@ -1,6 +1,6 @@
 import prisma from 'lib/prisma';
 import { GetServerSideProps } from 'next/types';
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import Layout from 'src/components/Layout';
 import { useDispatch, useSelector } from 'react-redux';
@@ -59,6 +59,8 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
         router.push('/shop/subcategory/[id]', `/shop/subcategory/${subcategoryId}`)
     }
 
+    const informationSection = useRef<HTMLDivElement>();
+
     const [informationState, setInformationState] = useState(false);
     const [moreCharacteristics, setMoreCharacteristics] = useState(false);
 
@@ -109,7 +111,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                             </div>
                         </div>
                     </div>
-                    <div className='shop_inner_products_product_page_information'>
+                    <div className='shop_inner_products_product_page_information' ref={informationSection}>
                         <div className='shop_inner_products_product_page_information_nav'>
                             <div 
                                 onClick={() => setInformationState(false)}
@@ -158,7 +160,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                                         </>
                                     }
                                     {сharacteristics.length > 2 ? 
-                                        <div onClick={() => setMoreCharacteristics(!moreCharacteristics)} className='shop_inner_products_product_page_information_content_сharacteristics_button' >
+                                        <div onClick={() => {setMoreCharacteristics(!moreCharacteristics); moreCharacteristics ? window.scrollTo(0, informationSection.current.offsetTop - 85) : null}} className='shop_inner_products_product_page_information_content_сharacteristics_button' >
                                             <span>{!moreCharacteristics ? 'Показати всі' : 'Сховати'}</span>
                                             <span className={!moreCharacteristics ? 'shop_inner_products_product_page_information_content_сharacteristics_button_arrow' : 'shop_inner_products_product_page_information_content_сharacteristics_button_arrow shop_inner_products_product_page_information_content_сharacteristics_button_arrow-active'}></span>
                                         </div> 
