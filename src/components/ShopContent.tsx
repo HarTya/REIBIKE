@@ -35,7 +35,6 @@ function ShopContent({
                         : observableSection.current.offsetTop - window.innerHeight
                     )
                 }
-                await setIsFiltrationMenuOpen(false)
                 setMenuScrollTopOffset(window.scrollY)
             })
         };
@@ -149,14 +148,14 @@ function ShopContent({
                         <div className='shop_inner_brands'>
                             <div 
                                 className={idOfCurrentBrand === 1 ? 'shop_inner_brands_button-active shop_inner_brands_button' : 'shop_inner_brands_button'} 
-                                onClick={() => {setIsFiltrationMenuOpen(false); showAllProducts(); window.scroll(0, 0)}}
+                                onClick={() => {showAllProducts(); window.scroll(0, 0)}}
                             >
                                 Показати всі
                             </div>
                             {brands.length ? brands.map(brand => 
                                 <div 
                                     key={brand.id} 
-                                    onClick={() => {setIsFiltrationMenuOpen(false); productsWithCurrentBrand(brand.id); window.scroll(0, 0)}} 
+                                    onClick={() => {productsWithCurrentBrand(brand.id); window.scroll(0, 0)}} 
                                     className={idOfCurrentBrand === brand.id ? 'shop_inner_brands_brand-active shop_inner_brands_brand' : 'shop_inner_brands_brand'}
                                 >
                                     {brand.name}
