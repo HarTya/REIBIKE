@@ -264,7 +264,7 @@ function ShopContent({
                     <div className='shop_inner_products' ref={productsRef}>
                         {productsState.length ? productsState.map(product => 
                             <div onClick={() => {dispatch(setSearchState(false)); router.push('/shop/product/[id]', `/shop/product/${product.id}`)}}  key={product.id} className='shop_inner_products_product'>
-                                <img className='shop_inner_products_product_img' src={product.image} />
+                                <img className='shop_inner_products_product_img' src={product.fullImage} />
                                 <div className='shop_inner_products_product_content'>
                                     <div className='shop_inner_products_product_content_name'>{product.name}</div>
                                     <div className='shop_inner_products_product_content_price'>{product.price} $</div>
