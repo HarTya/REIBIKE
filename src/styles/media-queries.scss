@@ -1,4 +1,4 @@
-@media screen and (max-width: 100vw) {
+@media screen {
     .admin_select {
         display: flex;
         flex-direction: column;
@@ -451,7 +451,7 @@
             justify-content: center;
             align-items: center;
             z-index: 10;
-            transition: all 0s ease-in-out!important;
+            transition: all 0.4s ease-in-out;
             &-active {
                 right: 0!important;
             }
@@ -747,7 +747,7 @@
                 margin: 0;
                 border-radius: 0;
                 border: none;
-                transition: all 0s ease-in-out!important;
+                transition: none;
                 &-active {
                     left: 0!important;
                 }

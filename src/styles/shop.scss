@@ -381,8 +381,10 @@
                             text-align: left;
                             &_text {
                                 font-size: 50px;
-                                margin-bottom: 25px;
-                                font-weight: 700;
+                                margin-bottom: 30px;
+                                font-weight: 600;
+                                font-family: 'Segoe UI', sans-serif;
+                                font-style: normal;
                                 line-height: 1;
                             }
                             &_status {
@@ -435,6 +437,9 @@
                         align-items: center;
                         flex-direction: column;
                         margin-top: 50px;
+                        font-family: 'Segoe UI', sans-serif;
+                        font-style: normal;
+                        line-height: 1;
                         &_nav {
                             width: 100%;
                             display: flex;
