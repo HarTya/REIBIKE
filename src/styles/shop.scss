@@ -9,7 +9,6 @@
         padding: 0 30px;
     }
     &_inner {
-        transition: all 0.2s ease-in-out;
         position: relative;
         margin-left: 185px;
         padding: 45px 30px;
@@ -24,7 +23,7 @@
             height: calc(100vh - 85px);
             max-height: 100%;
             background-color: white;
-            transition: all 0.1s ease-in-out;
+            transition: all 0.2s ease-in-out;
             overflow-y: auto;
             overflow-x: hidden;
             z-index: 20;
@@ -120,8 +119,7 @@
             transition: all 0.4s ease-in-out!important;
             &_products {
                 width: 445px;
-                height: 100%;
-                margin-top: 50px;
+                margin: 50px 0;
                 display: flex;
                 justify-content: center;
                 align-items: center;

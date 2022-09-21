@@ -21,7 +21,6 @@ function ShopContent({
     const router = useRouter();
 
     const productsRef = useRef<HTMLDivElement>();
-    const shopInnerMenu = useRef<HTMLDivElement>();
     const observableSection = useRef<HTMLDivElement>();
     const observer = useRef<any>();
 
@@ -36,8 +35,7 @@ function ShopContent({
                         : observableSection.current.offsetTop - window.innerHeight
                     )
                 }
-                setIsFiltrationMenuOpen(false)
-                await setMenuScrollTopOffset(window.scrollY)
+                setMenuScrollTopOffset(window.scrollY)
             })
         };
 
@@ -137,10 +135,10 @@ function ShopContent({
                 <div className='search_button' onClick={() => closeSearch()}></div>
             </div>
             <div className='shop' onClick={() => setIsFiltrationMenuOpen(false)}>
-                <div ref={shopInnerMenu} className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
+                <div className={isFiltrationMenuOpen ? 'shop_inner_menu-active shop_inner_menu' : 'shop_inner_menu'} onClick={(e) => e.stopPropagation()}>
                     <style jsx global>{`
                         .shop_inner_menu {
-                            transform: translate3d(0, ${menuScrollTopOffset}px, 0)!important;
+                            top: ${menuScrollTopOffset}px!important;
                         }
                     `}</style>
                     <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
