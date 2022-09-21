@@ -34,6 +34,8 @@ function ShopContent({
                         window.scrollY === 0 ? 0 :
                         observableSection.current.offsetTop - window.innerHeight
                     )
+                } else if (window.scrollY >= observableSection.current.offsetTop) {
+                    return setMenuScrollTopOffset(observableSection.current.offsetTop - window.innerHeight)
                 }
                 setMenuScrollTopOffset(0)
             }, { passive: true })
