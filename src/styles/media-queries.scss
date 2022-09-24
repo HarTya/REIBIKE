@@ -1029,8 +1029,16 @@
                 font-size: 28px;
             }
             &_product {
-                & > img {
-                    max-height: 100%;
+                &_imgContainer {
+                    width: 100%!important;
+                    height: 150px!important;
+                    margin-bottom: 10px;
+                    border-radius: 25px;
+                    & > img {
+                        max-width: 100%!important;
+                        max-height: 100%!important;
+                        border-radius: 25px;
+                    }
                 }
             }
         }
@@ -1221,6 +1229,14 @@
             &_products {
                 &_product {
                     margin: 20px 0!important;
+                    &_imgContainer {
+                        width: 100%!important;
+                        height: 200px!important;
+                        margin-bottom: 10px;
+                    }
+                    &_img {
+                        max-width: 100%!important;
+                    }
                     &_content {
                         padding: 15px;
                         &_price {
