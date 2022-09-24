@@ -15,10 +15,9 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     async function changeProduct() {
-        const { id, image, fullImage, name, price, description, available, categoryId, subcategoryId, brandId } = req.body;
+        const { id, image, name, price, description, available, categoryId, subcategoryId, brandId } = req.body;
 
         if (!image) throw 'Оберіть картинку';
-        if (!fullImage) throw 'Обріжте картинку';
 
         if (!name) throw 'Порожня назва';
 
@@ -37,7 +36,6 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
             where: { id },
             data: {
                 image,
-                fullImage,
                 name,
                 price: priceNum,
                 description,

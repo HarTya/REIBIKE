@@ -20,7 +20,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
     function addProductToBasket() {
         const basketProductObj = {
             id: product.id,
-            image: product.fullImage,
+            image: product.image,
             name: product.name,
             price: product.price,
             count: 1
@@ -69,7 +69,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
             <div className='shop_inner_products_product_page'>
                 <div className='container'>
                     <div className='shop_inner_products_product_page_inner'>
-                        <img className='shop_inner_products_product_page_img' src={product.fullImage} />
+                        <img className='shop_inner_products_product_page_img' src={product.image} />
                         <div className='shop_inner_products_product_page_content'>
                             <div className='shop_inner_title shop_inner_products_product_page_content_title'>
                                 <div className='shop_inner_title_nav'>
@@ -128,7 +128,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                         </div>
                         <div className='shop_inner_products_product_page_information_content'>
                             {!informationState ? 
-                                <div className='shop_inner_products_product_page_information_content_description'>{product.description}</div>
+                                <pre className='shop_inner_products_product_page_information_content_description'>{product.description.split('. ').join('.\n\n')}</pre>
                                 : <div className='shop_inner_products_product_page_information_content_сharacteristics'>
                                     <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic'>
                                         <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic_title'>Бренд:</div>

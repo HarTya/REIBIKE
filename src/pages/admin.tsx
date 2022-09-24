@@ -258,7 +258,6 @@ function Admin(props): ReactElement {
     const [isCreateProductModalOpen, setIsCreateProductModalOpen] = useState(false);
     const [isCategoryModalOpenProduct, setIsCategoryModalOpenProduct] = useState(false);
 
-    const [fullImage, setFullImage] = useState(null);
     const [image, setImage] = useState(null);
 
     function handleOnChangeFileInput(event) {
@@ -273,16 +272,15 @@ function Admin(props): ReactElement {
         }
     };
 
-    async function handleOnSubmitFileInput() {
+    async function handleOnSubmitFile() {
         setLoading(true)
-        const formData = new FormData();
+            const formData = new FormData();
 
-        formData.append('file', image)
-        formData.append('upload_preset', process.env.CLOUDINARY_PRESET_NAME)
+            formData.append('file', image)
+            formData.append('upload_preset', process.env.CLOUDINARY_PRESET_NAME)
 
-        const data = await fetch(process.env.CLOUDINARY_REQ_URL, { method: 'POST', body: formData }).then(res => res.json());
-        setFullImage(process.env.CLOUDINARY_RES_URL.replace('w_500,h_500,c_fill/', '') + 'v' + data.version + '/' + data.public_id)
-        setImage(process.env.CLOUDINARY_RES_URL + 'v' + data.version + '/' + data.public_id)
+            const data = await fetch(process.env.CLOUDINARY_REQ_URL, { method: 'POST', body: formData }).then(res => res.json());
+            setImage(process.env.CLOUDINARY_RES_URL + 'v' + data.version + '/' + data.public_id)
         setLoading(false)
     }
 
@@ -312,7 +310,7 @@ function Admin(props): ReactElement {
         setLoading(true)
         setError('')
 
-        return productService.createProduct(image, fullImage, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
+        return productService.createProduct(image, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
             .then(() => Router.reload())
             .finally(() => window.scroll(0, 0))
             .catch(error => {
@@ -329,10 +327,9 @@ function Admin(props): ReactElement {
 
     const [characteristicsState, setCharacteristicsState] = useState([]);
 
-    function openProductModal(productId, productImg, productFullImg, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId) {
+    function openProductModal(productId, productImg, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId) {
         setProductId(productId)
         setImage(productImg)
-        setFullImage(productFullImg)
         setProductName(productName)
         setProductPrice(productPrice)
         setProductDescription(productDescription)
@@ -351,7 +348,7 @@ function Admin(props): ReactElement {
         setLoading(true)
         setError('')
 
-        return productService.changeProduct(productId, image, fullImage, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
+        return productService.changeProduct(productId, image, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
             .then(() => Router.reload())
             .finally(() => window.scroll(0, 0))
             .catch(error => {
@@ -496,7 +493,6 @@ function Admin(props): ReactElement {
                                 <div onClick={() => {
                                     setIsCreateProductModalOpen(true)
                                     setImage(null)
-                                    setFullImage(null)
                                     setProductId(null)
                                     setProductName('')
                                     setProductPrice('')
@@ -509,7 +505,7 @@ function Admin(props): ReactElement {
                                 <div className='admin_products_content'>
                                     {products.length ? products.map(product => 
                                         <div 
-                                            onClick={() => openProductModal(product.id, product.image, product.fullImage, product.name, product.price, product.description, product.available, product.categoryId, product.subcategoryId, product.brandId)}
+                                            onClick={() => openProductModal(product.id, product.image, product.name, product.price, product.description, product.available, product.categoryId, product.subcategoryId, product.brandId)}
                                             key={product.id} 
                                             className='admin_products_product' 
                                         >
@@ -664,7 +660,7 @@ function Admin(props): ReactElement {
                                 onChange={handleOnChangeFileInput}
                             />
                             {image ? <img className='admin_products_panel_img' src={image} /> : <></>}
-                            <div onClick={handleOnSubmitFileInput} className='admin_products_panel_button'>Обрізати</div>
+                            <div onClick={handleOnSubmitFile} className='admin_products_panel_button'>Додати</div>
                             <input
                                 placeholder='Назва товара'
                                 value={productName} 
@@ -743,7 +739,7 @@ function Admin(props): ReactElement {
                                 onChange={handleOnChangeFileInput}
                             />
                             {image ? <img className='admin_products_panel_img' src={image} /> : <></>}
-                            <div onClick={handleOnSubmitFileInput} className='admin_products_panel_button'>Обрізати</div>
+                            <div onClick={handleOnSubmitFile} className='admin_products_panel_button'>Додати</div>
                             <input
                                 placeholder='Назва товара'
                                 value={productName} 

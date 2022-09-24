@@ -323,20 +323,25 @@
                 cursor: pointer;
                 max-width: 275px;
                 width: 100%;
-                border-radius: 25px;
-                background-color: #D9D9D9;
                 margin: 20px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
+                &_imgContainer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 275px;
+                }
                 &_img {
                     width: 275px;
-                    height: 200px;
-                    vertical-align: middle;
+                    max-height: 275px;
                     border-radius: 25px 25px 0 0!important;
                 }
                 &_content {
+                    background-color: #D9D9D9;
+                    border-radius: 0 0 25px 25px;
                     width: 100%;
                     padding: 20px;
                     &_name {
@@ -378,7 +383,6 @@
                         max-width: 100%;
                         max-height: 500px;
                         vertical-align: middle;
-                        background-color: #D9D9D9;
                         border-radius: 20px!important;
                         cursor: pointer;
                     }
@@ -456,7 +460,6 @@
                         margin-top: 50px;
                         font-family: 'Segoe UI', sans-serif;
                         font-style: normal;
-                        line-height: 1;
                         &_nav {
                             width: 100%;
                             display: flex;
@@ -486,7 +489,10 @@
                             &_description {
                                 color: var(--main-08);
                                 font-size: 24px;
-                                line-height: 1.1!important;
+                                font-family: 'Segoe UI', sans-serif;
+                                font-style: normal;
+                                line-height: 1;
+                                white-space: pre-line;
                             }
                             &_сharacteristics {
                                 width: 100%;

@@ -955,15 +955,6 @@
         &_message {
             font-size: 27.5px!important;
         }
-        &_products_content {
-            & > div {
-                min-width: 100%;
-                & img {
-                    width: 100px;
-                    height: 100px;
-                }
-            }
-        }
     }
 
     .order {
@@ -1293,9 +1284,6 @@
                                     &_сharacteristic {
                                         flex-direction: column;
                                         align-items: flex-start;
-                                        &_title {
-                                            margin-bottom: 5px;
-                                        }
                                         &_content {
                                             margin-left: 0;
                                         }
