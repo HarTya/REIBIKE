@@ -223,11 +223,21 @@
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
-            & > img {
+            &_imgContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 210px;
+                width: 260px;
+                background-color: white;
                 border-radius: 25px 0 0 25px;
-                max-height: 200px;
-                max-width: 250px;
-                vertical-align: middle;
+                & > img {
+                    max-height: 200px;
+                    border-radius: 25px 0 0 25px;
+                    max-width: 250px;
+                    vertical-align: middle;
+                    background-color: transparent!important;
+                }
             }
             &_content {
                 padding: 0 20px;

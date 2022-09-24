@@ -507,9 +507,9 @@ function Admin(props): ReactElement {
                                         <div 
                                             onClick={() => openProductModal(product.id, product.image, product.name, product.price, product.description, product.available, product.categoryId, product.subcategoryId, product.brandId)}
                                             key={product.id} 
-                                            className='admin_products_product' 
+                                            className='c' 
                                         >
-                                            <img src={product.image} />
+                                            <div><img src={product.image} /></div>
                                             <p>{product.name}</p>
                                         </div>
                                     ) : <div className='admin_message'>Товари відсутні</div>}  

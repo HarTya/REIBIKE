@@ -364,11 +364,20 @@
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                 }
-                img {
-                    max-width: 150px;
-                    max-height: 150px;
+                & > div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 160px;
+                    width: 160px;
+                    background-color: white;
                     border-radius: 25px;
-                    background-color: transparent!important;
+                    img {
+                        max-width: 150px;
+                        max-height: 150px;
+                        border-radius: 25px;
+                        background-color: transparent!important;
+                    }
                 }
             }
         }

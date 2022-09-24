@@ -193,7 +193,7 @@ function Header(): ReactElement {
                             key={basketProduct.id} 
                             className='basket_products_product' 
                         >
-                            <img src={basketProduct.image} />
+                            <div className='basket_products_product_imgContainer'><img src={basketProduct.image} /></div>
                             <div className='basket_products_product_content'>
                                 <div className='basket_products_product_content_name'>{basketProduct.name}</div>
                                 <div className='basket_products_product_content_price'>{basketProduct.price} $</div>

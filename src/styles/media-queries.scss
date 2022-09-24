@@ -1221,9 +1221,6 @@
             &_products {
                 &_product {
                     margin: 20px 0!important;
-                    &_img {
-                        height: 100%!important;
-                    }
                     &_content {
                         padding: 15px;
                         &_price {
@@ -1361,7 +1358,7 @@
                     font-size: 20px;
                     text-align: center;
                 }
-                img {
+                & > div {
                     margin: 0 0 10px 0;
                 }
             }
