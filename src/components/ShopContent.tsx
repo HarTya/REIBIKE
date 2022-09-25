@@ -266,7 +266,7 @@ function ShopContent({
                             </div>
                         ) : <div className='shop_inner_message_products'>
                                 <div className='shop_inner_message_products_title'>Товари відсутні</div>
-                                <div className='shop_inner_message_products_subtitle'>Але ви завжди можете знайти в інтернеті що вам потрібно та замовити залишив посилання</div>
+                                <div className='shop_inner_message_products_subtitle'>Але ви завжди можете знайти в інтернеті те що вам потрібно та замовити залишив посилання</div>
                                 <div className='shop_inner_message_products_button' onClick={() => router.push('/order')}>Замовити</div>
                             </div>}                            
                     </div>
