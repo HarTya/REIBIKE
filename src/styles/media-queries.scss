@@ -185,7 +185,7 @@
                     }
                     &_imgContainer {
                         width: 100%;
-                        height: 500px;
+                        height: 100%;
                         margin: 20px 0 20px 0!important;
                     }
                     &_content {
@@ -903,9 +903,6 @@
                 }
             }
             &_products_product_page {
-                &_imgContainer {
-                    height: 100%!important;
-                }
                 &_content {
                     &_name {
                         &_text {
