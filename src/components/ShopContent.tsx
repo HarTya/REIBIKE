@@ -27,22 +27,16 @@ function ShopContent({
     const [menuScrollTopOffset, setMenuScrollTopOffset] = useState(0);
 
     useEffect(() => {
-        var callback = function(entries) {
-            window.addEventListener('scroll', async () => {
-                if (entries[0].isIntersecting) {
-                    return setMenuScrollTopOffset(
-                        window.scrollY === 0 ? 0 :
-                        observableSection.current ? observableSection.current.offsetTop - window.innerHeight : null
-                    )
-                }
-                setMenuScrollTopOffset(0)
-            }, { passive: true })
-        }
-
-        observer.current = new IntersectionObserver(callback);
-        observer.current.observe(observableSection.current)
-
-        return () => document.removeEventListener('scroll', () => {}) 
+        window.addEventListener('scroll', async () => {
+            const isStuck = observableSection.current ? window.scrollY >= observableSection.current.offsetTop - window.innerHeight : false;
+            if (isStuck) {
+                return setMenuScrollTopOffset(
+                    window.scrollY === 0 ? 0 :
+                    observableSection.current.offsetTop - window.innerHeight
+                )
+            }
+            setMenuScrollTopOffset(0)
+        })
     }, [])
 
     const [productsState, setProductsState] = useState(products);

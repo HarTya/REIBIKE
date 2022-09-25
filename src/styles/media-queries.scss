@@ -183,8 +183,10 @@
                     &_inner {
                         flex-direction: column;
                     }
-                    &_img {
-                        margin: 0 0 20px 0!important;
+                    &_imgContainer {
+                        width: 100%;
+                        height: 500px;
+                        margin: 20px 0 20px 0!important;
                     }
                     &_content {
                         max-width: 100%!important;
@@ -417,10 +419,6 @@
                 &_text {
                     margin: 0 0 10px 0!important;
                 }
-            }
-            &_products_product_page_img {
-                max-width: 100%!important;
-                max-height: 500px!important;
             }
         }
     }
@@ -905,6 +903,9 @@
                 }
             }
             &_products_product_page {
+                &_imgContainer {
+                    height: 100%!important;
+                }
                 &_content {
                     &_name {
                         &_text {
@@ -1032,7 +1033,7 @@
                 &_imgContainer {
                     width: 100%!important;
                     height: 150px!important;
-                    margin-bottom: 10px;
+                    padding: 10px;
                     border-radius: 25px;
                     & > img {
                         max-width: 100%!important;
@@ -1231,11 +1232,7 @@
                     margin: 20px 0!important;
                     &_imgContainer {
                         width: 100%!important;
-                        height: 200px!important;
-                        margin-bottom: 10px;
-                    }
-                    &_img {
-                        max-width: 100%!important;
+                        height: 250px!important;
                     }
                     &_content {
                         padding: 15px;
@@ -1245,10 +1242,6 @@
                     }
                     &_page {
                         padding: 0 0 25px 0 !important;
-                        &_img {
-                            max-width: 100vw!important;
-                            border-radius: 0;
-                        }
                         &_content {
                             &_title {
                                 .shop_inner_title_nav {
