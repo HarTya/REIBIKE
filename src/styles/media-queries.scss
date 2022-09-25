@@ -186,11 +186,12 @@
                     &_imgContainer {
                         width: 100%;
                         height: 100%;
-                        margin: 20px 0 20px 0!important;
+                        margin: 0 0 20px 0!important;
                     }
                     &_content {
                         max-width: 100%!important;
                         align-items: center!important;
+                        margin-left: 0!important;
                         &_name {
                             text-align: center;
                         }
@@ -1239,6 +1240,10 @@
                     }
                     &_page {
                         padding: 0 0 25px 0 !important;
+                        &_imgContainer {
+                            width: 100vw!important;
+                            margin: 20px 0!important;
+                        }
                         &_content {
                             &_title {
                                 .shop_inner_title_nav {
