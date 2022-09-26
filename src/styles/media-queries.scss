@@ -217,6 +217,13 @@
         }
     }
 
+    .recommendedWebsites_websites {
+        flex-direction: column;
+        &_website {
+            margin: 0 0 40px 0!important;
+        }
+    }
+
     .footer {
         height: auto!important;
         &_inner {
@@ -968,7 +975,7 @@
     .order {
         &_inner {
             &_title {
-                font-size: 50px!important;
+                font-size: 47.5px!important;
             }
             &_subtitle {
                 font-size: 20px!important;
@@ -990,6 +997,11 @@
                 width: 200px!important;
                 height: 50px!important;
                 font-size: 20px!important;
+            }
+        }
+        .recommendedWebsites {
+            &_title {
+                font-size: 40px;
             }
         }
     }
@@ -1379,7 +1391,6 @@
     }
 
     .order {
-        height: 700px!important;
         &_inner {
             &_title {
                 font-size: 34px!important;
@@ -1418,6 +1429,9 @@
                     }
                 }
             }
+        }
+        .recommendedWebsites_title {
+            font-size: 31.5px;
         }
         &_success {
             font-size: 20px;
@@ -1632,6 +1646,9 @@
                 height: 40px!important;
                 font-size: 18px!important;
             }
+        }
+        .recommendedWebsites_title {
+            font-size: 25px;
         }
     }
 

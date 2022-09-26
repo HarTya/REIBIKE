@@ -77,7 +77,7 @@ function Index(): ReactElement {
                 <div className='container'>
                     <div className='anythingForYourHobby_inner'>
                         <div className='anythingForYourHobby_inner_title'>Преміальний магазин</div>
-                        <div className='anythingForYourHobby_inner_subtitle'>На сторінці магазину ви можете побачити добірку останні версії брендів та товарів, яких ніколи не було в Україні</div>
+                        <div className='anythingForYourHobby_inner_subtitle'>На сторінці магазину ви можете побачити добірку брендів та товарів, яких ніколи не було в Україні</div>
                         <div className='anythingForYourHobby_inner_button' onClick={() => router.push('/shop')}>В Магазин</div>
                     </div>
                 </div>

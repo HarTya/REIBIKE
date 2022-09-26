@@ -272,18 +272,6 @@ function Admin(props): ReactElement {
         }
     };
 
-    async function handleOnSubmitFile() {
-        setLoading(true)
-            const formData = new FormData();
-
-            formData.append('file', image)
-            formData.append('upload_preset', process.env.CLOUDINARY_PRESET_NAME)
-
-            const data = await fetch(process.env.CLOUDINARY_REQ_URL, { method: 'POST', body: formData }).then(res => res.json());
-            setImage(process.env.CLOUDINARY_RES_URL + 'v' + data.version + '/' + data.public_id)
-        setLoading(false)
-    }
-
     const [productId, setProductId] = useState(null);
     const [productName, setProductName] = useState('');
     const [productPrice, setProductPrice] = useState('');
@@ -309,6 +297,13 @@ function Admin(props): ReactElement {
         e.preventDefault()
         setLoading(true)
         setError('')
+        const formData = new FormData();
+
+        formData.append('file', image)
+        formData.append('upload_preset', process.env.CLOUDINARY_PRESET_NAME)
+
+        const data = await fetch(process.env.CLOUDINARY_REQ_URL, { method: 'POST', body: formData }).then(res => res.json());
+        await setImage(process.env.CLOUDINARY_RES_URL + 'v' + data.version + '/' + data.public_id)
 
         return productService.createProduct(image, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
             .then(() => Router.reload())
@@ -347,6 +342,13 @@ function Admin(props): ReactElement {
         e.preventDefault()
         setLoading(true)
         setError('')
+        const formData = new FormData();
+
+        formData.append('file', image)
+        formData.append('upload_preset', process.env.CLOUDINARY_PRESET_NAME)
+
+        const data = await fetch(process.env.CLOUDINARY_REQ_URL, { method: 'POST', body: formData }).then(res => res.json());
+        await setImage(process.env.CLOUDINARY_RES_URL + 'v' + data.version + '/' + data.public_id)
 
         return productService.changeProduct(productId, image, productName, productPrice, productDescription, productAvailable, productCategoryId, productSubcategoryId, productBrandId)
             .then(() => Router.reload())
@@ -660,7 +662,6 @@ function Admin(props): ReactElement {
                                 onChange={handleOnChangeFileInput}
                             />
                             {image ? <img className='admin_products_panel_img' src={image} /> : <></>}
-                            <div onClick={handleOnSubmitFile} className='admin_products_panel_button'>Додати</div>
                             <input
                                 placeholder='Назва товара'
                                 value={productName} 
@@ -716,7 +717,7 @@ function Admin(props): ReactElement {
                                 <div className={isBrandsAdminSelectOpen ? 'admin_brands-active admin_brands' : 'admin_brands'}>
                                     {brands.length ? brands.map(brand => 
                                         <div 
-                                            onClick={() => setProductBrandId(brand.id)}
+                                            onClick={() => {setProductBrandId(brand.id); setIsBrandsAdminSelectOpen(false)}}
                                             key={brand.id} 
                                             className={productBrandId === brand.id ? 'admin_brands_brand-active admin_brands_brand' : 'admin_brands_brand'}
                                         >
@@ -739,7 +740,6 @@ function Admin(props): ReactElement {
                                 onChange={handleOnChangeFileInput}
                             />
                             {image ? <img className='admin_products_panel_img' src={image} /> : <></>}
-                            <div onClick={handleOnSubmitFile} className='admin_products_panel_button'>Додати</div>
                             <input
                                 placeholder='Назва товара'
                                 value={productName} 

@@ -329,12 +329,11 @@
             }
         }
         &_content {
-            margin-top: 5px;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-direction: column;
+            flex-wrap: wrap;
             .admin_message {
                 background-color: transparent;
                 padding: 0;
@@ -346,9 +345,9 @@
                 background-color: #D9D9D9;
                 padding: 5px;
                 width: 100%;
-                max-width: 600px;
+                max-width: 500px;
                 border-radius: 25px;
-                margin-bottom: 15px;
+                margin: 5px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
@@ -356,7 +355,7 @@
                     margin-bottom: 0;
                 }
                 p {
-                    max-width: 100%;
+                    max-width: 310px;
                     font-size: 24px;
                     margin: 0 10px;
                     display: -webkit-box;

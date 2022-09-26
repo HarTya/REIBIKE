@@ -35,7 +35,7 @@ function Footer(): ReactElement {
                     <div className='footer_inner_information_contacts'>
                         <div className='footer_inner_information_contacts_contact'>
                             <TelephoneIcon />
-                            <div className='footer_inner_information_contacts_contact_text'><a href='tel:+380996252092'>0996252092</a></div>
+                            <div className='footer_inner_information_contacts_contact_text'><a href='tel:+380686370137'>+380686370137</a></div>
                         </div>
                         <div className='footer_inner_information_contacts_contact'>
                             <InstagramIcon />
