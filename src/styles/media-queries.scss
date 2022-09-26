@@ -724,6 +724,12 @@
             &-active {
                 left: 185px!important;
                 border-left: 1px solid #1C1C1C!important;
+                .shop_inner_select {
+                    margin: 25px 0 0 0!important;
+                }
+                .shop_inner_products {
+                    justify-content: flex-start;
+                }
             }
             &_message {
                 font-size: 28px!important;
