@@ -35,11 +35,11 @@ function Index(): ReactElement {
 
     return (
         <Layout title='Про нас'>
-             <div className='everythingForYou'>
+            <div className='everythingForYou'>
                 <div className='container'>
                     <div className='everythingForYou_inner'>
                         <div className='everythingForYou_inner_title'>Все що завгодно <br />для вас</div>
-                        <div className='everythingForYou_inner_subtitle'>Ви можете замовити що завгодно залишив посилання з сторінці товара, а ми дбайливо все привеземо для вас</div>
+                        <div className='everythingForYou_inner_subtitle'>Ви можете замовити що завгодно залишив посилання з сторінці товара в інтернеті, а ми дбайливо все привеземо для вас</div>
                         <div className='everythingForYou_inner_button' onClick={() => router.push('/order')}>Замовити</div>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ function Index(): ReactElement {
                 <div className='container'>
                     <div className='anythingForYourHobby_inner'>
                         <div className='anythingForYourHobby_inner_title'>Преміальний магазин</div>
-                        <div className='anythingForYourHobby_inner_subtitle'>В нашому веломагазині ви можете знайти найдобірні товари, запрошуємо Вас на цю сторінку, якщо гроші пропалюють кишеню</div>
+                        <div className='anythingForYourHobby_inner_subtitle'>На сторінці магазину ви можете побачити добірку останні версії брендів та товарів, яких ніколи не було в Україні</div>
                         <div className='anythingForYourHobby_inner_button' onClick={() => router.push('/shop')}>В Магазин</div>
                     </div>
                 </div>
