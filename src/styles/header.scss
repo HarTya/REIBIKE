@@ -66,11 +66,11 @@
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: -10px;
+                    bottom: -5px;
                     left: 50%;
                     transform: translate(-50%, -50%);
                     width: 40%;
-                    height: 3px;
+                    height: 2px;
                     background-color: white;
                     border-radius: 10px;
                     animation: HeaderUnderline 0.8s ease-in-out 1;
@@ -211,6 +211,7 @@
             line-height: 1;
             span {
                 font-size: 20px;
+                font-weight: 500;
             }
         }
         &_product {
@@ -224,19 +225,21 @@
                 margin-bottom: 15px;
             }
             &_imgContainer {
+                cursor: pointer;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 210px;
-                width: 260px;
+                height: 200px;
+                width: 100%;
                 background-color: white;
                 border-radius: 25px;
                 & > img {
-                    max-height: 200px;
+                    max-height: 100%;
                     border-radius: 25px;
-                    max-width: 250px;
+                    max-width: 100%;
                     vertical-align: middle;
                     background-color: transparent!important;
+                    padding: 5px;
                 }
             }
             &_content {

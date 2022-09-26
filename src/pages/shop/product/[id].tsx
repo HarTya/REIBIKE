@@ -69,7 +69,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
             <div className='shop_inner_products_product_page'>
                 <div className='container'>
                     <div className='shop_inner_products_product_page_inner'>
-                        <a href={product.image}><div className='shop_inner_products_product_page_imgContainer'>
+                        <a href={product.image} target={'_blank'}><div className='shop_inner_products_product_page_imgContainer'>
                             <img className='shop_inner_products_product_page_img' src={product.image} />
                         </div></a>
                         <div className='shop_inner_products_product_page_content'>
