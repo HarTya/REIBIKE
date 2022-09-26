@@ -575,7 +575,7 @@
         background: url(../images/index/anythingForYourHobby/bg-mobile.jpg) center no-repeat;
         &_inner {
             &_title {
-                font-size: 50px;
+                font-size: 47.5px;
             }
             &_subtitle {
                 font-size: 20px;
@@ -608,7 +608,7 @@
     .everythingForYou {
         &_inner {
             &_title {
-                font-size: 50px;
+                font-size: 47.5px;
             }
             &_subtitle {
                 font-size: 20px;
@@ -923,13 +923,16 @@
                 &_information {
                     &_nav {
                         &_item {
-                            font-size: 30px;
+                            font-size: 27px;
                         }
                     }
                     &_content {
-                        font-size: 24px;
-                        &_description {
-                            font-size: 20px;
+                        font-size: 20px;
+                        &_сharacteristics_button {
+                            max-width: 140px!important;
+                            span {
+                                font-size: 17px;
+                            }
                         }
                     }
                 }
@@ -1275,10 +1278,7 @@
                             }
                             &_content {
                                 margin-top: 7px;
-                                font-size: 22px;
-                                &_description {
-                                    font-size: 18px;
-                                }
+                                font-size: 18px;
                                 &_сharacteristics {
                                     &_сharacteristic {
                                         flex-direction: column;
@@ -1536,12 +1536,6 @@
                     &_nav {
                         &_item {
                             font-size: 20px;
-                        }
-                    }
-                    &_content {
-                        font-size: 20px;
-                        &_description {
-                            font-size: 16px;
                         }
                     }
                 }

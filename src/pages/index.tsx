@@ -35,12 +35,12 @@ function Index(): ReactElement {
 
     return (
         <Layout title='Про нас'>
-            <div className='anythingForYourHobby'>
+             <div className='everythingForYou'>
                 <div className='container'>
-                    <div className='anythingForYourHobby_inner'>
-                        <div className='anythingForYourHobby_inner_title'>Будь що завгодно для вашого хобі</div>
-                        <div className='anythingForYourHobby_inner_subtitle'>В нашому веломагазині ви можете знайти багато популярних брендів та замовити для себе все що завгодно звідки завгодно за доступні гроші</div>
-                        <div className='anythingForYourHobby_inner_button' onClick={() => router.push('/shop')}>В Магазин</div>
+                    <div className='everythingForYou_inner'>
+                        <div className='everythingForYou_inner_title'>Все що завгодно <br />для вас</div>
+                        <div className='everythingForYou_inner_subtitle'>Ви можете замовити що завгодно залишив посилання з сторінці товара, а ми дбайливо все привеземо для вас</div>
+                        <div className='everythingForYou_inner_button' onClick={() => router.push('/order')}>Замовити</div>
                     </div>
                 </div>
             </div>
@@ -73,12 +73,12 @@ function Index(): ReactElement {
                     </div>
                 </div>
             </div>
-            <div className='everythingForYou'>
+            <div className='anythingForYourHobby'>
                 <div className='container'>
-                    <div className='everythingForYou_inner'>
-                        <div className='everythingForYou_inner_title'>Все що завгодно <br />для вас</div>
-                        <div className='everythingForYou_inner_subtitle'>Ви можете замовити що завгодно залишив посилання з сторінці товара, а ми дбайливо все привеземо для вас</div>
-                        <div className='everythingForYou_inner_button' onClick={() => router.push('/order')}>Замовити</div>
+                    <div className='anythingForYourHobby_inner'>
+                        <div className='anythingForYourHobby_inner_title'>Преміальний магазин</div>
+                        <div className='anythingForYourHobby_inner_subtitle'>В нашому веломагазині ви можете знайти найдобірні товари, запрошуємо Вас на цю сторінку, якщо гроші пропалюють кишеню</div>
+                        <div className='anythingForYourHobby_inner_button' onClick={() => router.push('/shop')}>В Магазин</div>
                     </div>
                 </div>
             </div>

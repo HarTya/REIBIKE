@@ -25,11 +25,11 @@ function Header(): ReactElement {
     const dispatch = useDispatch();
 
     async function openSearch() {
+        await dispatch(setBurgerMenuState(false))
+        await dispatch(setSearchState(true))
         if (!router.asPath.includes('/shop') || router.asPath.includes('/shop/product')) {
-            await router.push('/shop')
+            return router.push('/shop')
         }
-        dispatch(setBurgerMenuState(false))
-        dispatch(setSearchState(true))
     }
 
     async function increment(basketProductId) {
@@ -152,7 +152,7 @@ function Header(): ReactElement {
                             : 'header_links_link'} 
                             onClick={() => router.push('/')}
                         >
-                            Про нас
+                            Головна
                         </div>
                         <div 
                             className={router.asPath === '/shop' ? 

@@ -113,6 +113,7 @@ function ShopContent({
         if (!searchText) {
             return unfilteredProducts
         }
+
         return products.filter(product =>
             product.name.toLowerCase().includes(searchText.toLowerCase())
         )
@@ -126,17 +127,19 @@ function ShopContent({
             setIsFiltrationMenuOpen(false)
             window.scroll(0, productsRef.current.offsetTop)
         }
-    }, [searchQuery, unfilteredProducts])
+    }, [searchQuery.length, unfilteredProducts])
 
     return (
         <Layout title={title}>
-            <div className={searchState && router.asPath.includes('/shop') ? 'search-active search' : 'search'}>
+            <div className={searchState ? 'search-active search' : 'search'}>
                 <div className='search_icon'><BlackSearchIcon /></div>
                 <input  
                     className='search_input'
                     value={searchQuery} 
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={(e) => {if (e.key === 'Backspace') {return setProductsState(unfilteredProducts)}}}
                     placeholder='Пошук у каталозі'
+                    autoFocus
                 />
                 <div className='search_button' onClick={() => closeSearch()}></div>
             </div>

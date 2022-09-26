@@ -140,7 +140,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                                         <>
                                             {сharacteristics.map((сharacteristic, index) => 
                                                 <div key={сharacteristic.id}>
-                                                    {index < 2 ?
+                                                    {index < 15 ?
                                                         <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic'>
                                                             <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic_title'>{сharacteristic.title}:</div>
                                                             <div className='shop_inner_products_product_page_information_content_сharacteristics_сharacteristic_content'>{сharacteristic.content}</div>
@@ -161,7 +161,7 @@ function Product({ product, category, subcategory, brand, сharacteristics }): R
                                             )}
                                         </>
                                     }
-                                    {сharacteristics.length > 2 ? 
+                                    {сharacteristics.length > 15 ? 
                                         <div onClick={() => {setMoreCharacteristics(!moreCharacteristics); moreCharacteristics ? window.scrollTo(0, informationSection.current.offsetTop - 100) : null}} className='shop_inner_products_product_page_information_content_сharacteristics_button' >
                                             <span>{!moreCharacteristics ? 'Показати всі' : 'Сховати'}</span>
                                             <span className={!moreCharacteristics ? 'shop_inner_products_product_page_information_content_сharacteristics_button_arrow' : 'shop_inner_products_product_page_information_content_сharacteristics_button_arrow shop_inner_products_product_page_information_content_сharacteristics_button_arrow-active'}></span>
