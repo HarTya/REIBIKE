@@ -32,9 +32,11 @@ function Order(): ReactElement {
     const [success, setSuccess] = useState('');
 
     useEffect(() => {
-        setLink('')
-        setContact('')
-        setComment('')
+        if (success.length) {
+            setLink('')
+            setContact('')
+            setComment('')
+        }
     }, [success])
 
     const [error, setError] = useState('');

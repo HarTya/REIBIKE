@@ -91,8 +91,10 @@ function Header(): ReactElement {
     const [success, setSuccess] = useState('');
 
     useEffect(() => {
-        setContact('')
-        setComment('')
+        if (success.length) {
+            setContact('')
+            setComment('')
+        }
     }, [success])
 
     const [error, setError] = useState('');
