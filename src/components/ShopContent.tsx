@@ -123,16 +123,12 @@ function ShopContent({
         const filteredProducts = filterProducts(searchQuery, productsState)
         refreshSortPriceButtons()
         setProductsState(filteredProducts)
-        if (searchQuery.length) {
-            setIsFiltrationMenuOpen(false)
-            window.scroll(0, productsRef.current.offsetTop)
-        }
     }, [searchQuery.length, unfilteredProducts])
 
     return (
         <Layout title={title}>
             <div className={searchState ? 'search-active search' : 'search'}>
-                <div className='search_icon'><BlackSearchIcon /></div>
+                <div className='search_icon' onClick={() => window.scroll(0, productsRef.current.offsetTop)}><BlackSearchIcon /></div>
                 <input  
                     className='search_input'
                     value={searchQuery} 
