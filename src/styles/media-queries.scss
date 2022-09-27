@@ -931,9 +931,14 @@
                     &_content {
                         font-size: 20px;
                         &_сharacteristics_button {
-                            max-width: 140px!important;
+                            max-width: 130px!important;
                             span {
                                 font-size: 17px;
+                                &:last-child {
+                                    width: 12px!important;
+                                    height: 12px!important;
+                                    border-radius: 2px!important;
+                                }
                             }
                         }
                     }
@@ -1292,6 +1297,9 @@
                                     &_сharacteristic {
                                         flex-direction: column;
                                         align-items: flex-start;
+                                        &_title {
+                                            margin-bottom: 3px;
+                                        }
                                         &_content {
                                             margin-left: 0;
                                         }

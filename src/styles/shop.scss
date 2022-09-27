@@ -516,13 +516,15 @@
                                 & > div {
                                     width: 100%;
                                     line-height: 1;
+                                    &:not(:last-child) {
+                                        margin-bottom: 15px;
+                                    }
                                 }
                                 &_сharacteristic {
                                     width: 100%;
                                     display: flex;
                                     justify-content: flex-start;
                                     color: var(--main-08);
-                                    margin-bottom: 15px;
                                     &_content {
                                         margin-left: 10px;
                                     }
