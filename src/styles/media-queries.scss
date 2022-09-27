@@ -165,6 +165,17 @@
         padding: 0 50px;
     }
 
+    .brands {
+        &_background {
+            width: 1230px!important;
+            height: 100px;
+            & * {
+                width: 100%!important;
+                height: 100px!important;
+            }
+        }
+    }
+
     .shop {
         &_inner {
             padding: 25px 30px;
@@ -365,20 +376,6 @@
 
     .footer {
         padding: 0 30px!important;
-    }
-
-    .brands {
-        overflow-x: auto;
-        &::-webkit-scrollbar {
-            display: none;
-        }
-        &_background {
-            width: 150%;
-            & * {
-                width: 100%!important;
-                height: 100px!important;
-            }
-        }
     }
 
     .whyAreWe {
@@ -592,11 +589,6 @@
                 font-size: 20px;
             }
         }
-    }
-
-    .brands_background {
-        width: 200%;
-        height: 100px;
     }
 
     .whyAreWe {
@@ -1096,10 +1088,6 @@
                 line-height: 1.5;
             }
         }
-    }
-
-    .brands_background {
-        width: 300%;
     }
 
     .whyAreWe {
