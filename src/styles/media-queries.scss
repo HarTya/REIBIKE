@@ -199,6 +199,9 @@
                         height: 100%;
                         margin: 0 0 20px 0!important;
                     }
+                    &_img {
+                        max-height: 400px!important;
+                    }
                     &_content {
                         max-width: 100%!important;
                         align-items: center!important;
@@ -1247,6 +1250,8 @@
                                 .shop_inner_title_nav {
                                     margin-bottom: 5px;
                                     justify-content: center;
+                                    width: 100vw;
+                                    padding: 0 5px;
                                 }
                             }
                             &_name {
