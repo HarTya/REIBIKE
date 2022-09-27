@@ -5,10 +5,10 @@ import { orderService } from 'src/services/order.service';
 import { selectBurgerMenuState, setBurgerMenuState } from 'src/store/burgerMenuSlice';
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import Website1 from '../images/order/websites/1.jpg';
-import Website2 from '../images/order/websites/2.jpg';
-import Website3 from '../images/order/websites/3.jpg';
-import Website4 from '../images/order/websites/4.jpg';
+import Website1 from '../images/order/websites/1.jpeg';
+import Website2 from '../images/order/websites/2.jpeg';
+import Website3 from '../images/order/websites/3.jpeg';
+import Website4 from '../images/order/websites/4.jpeg';
 
 function Order(): ReactElement {
     const burgerMenuState = useSelector(selectBurgerMenuState);
@@ -102,8 +102,8 @@ function Order(): ReactElement {
                         <div className='recommendedWebsites_title'>Рекомендовані сайти для пошуку товару</div>
                         <div className='recommendedWebsites_websites'>
                             <div className='recommendedWebsites_websites_website'><a href='https://www.bike24.com' target={'_blank'}><Image src={Website1} width={300} height={174} /></a></div>
-                            <div className='recommendedWebsites_websites_website'><a href='https://www.pinkbike.com/buysell/' target={'_blank'}><Image src={Website2} width={300} height={174} /></a></div>
-                            <div className='recommendedWebsites_websites_website'><a href='https://brink.uk' target={'_blank'}><Image src={Website3} width={300} height={174} /></a></div>
+                            <div className='recommendedWebsites_websites_website'><a href='https://www.bike-discount.de/' target={'_blank'}><Image src={Website2} width={300} height={174} /></a></div>
+                            <div className='recommendedWebsites_websites_website'><a href='https://www.bike-components.de/en/' target={'_blank'}><Image src={Website3} width={300} height={174} /></a></div>
                             <div className='recommendedWebsites_websites_website'><a href='https://www.chainreactioncycles.com/us/en' target={'_blank'}><Image src={Website4} width={300} height={174} /></a></div>
                         </div>
                     </div>
