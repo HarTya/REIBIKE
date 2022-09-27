@@ -1115,6 +1115,10 @@
         }
     }
 
+    .feedbackAboutUs_title {
+        font-size: 35px;
+    }
+
     .footer_inner {
         &_help {
             &_title {
@@ -1481,6 +1485,9 @@
         height: 600px;
         &_inner_button {
             width: 100%;
+        }
+        &_inner_title {
+            word-break: break-all;
         }
     }
 
