@@ -23,7 +23,7 @@ function Footer(): ReactElement {
                 </div>
                 <div className='footer_inner_quickLinks'>
                     <div className='footer_inner_quickLinks_pages'>
-                        <div className={router.asPath === '/' ? 'footer_inner_quickLinks_pages_page-active footer_inner_quickLinks_pages_page' : 'footer_inner_quickLinks_pages_page'} onClick={() => router.push('/')}>Про нас</div>
+                        <div className={router.asPath === '/' ? 'footer_inner_quickLinks_pages_page-active footer_inner_quickLinks_pages_page' : 'footer_inner_quickLinks_pages_page'} onClick={() => router.push('/')}>Головна</div>
                         <div className={router.asPath === '/shop' ? 'footer_inner_quickLinks_pages_page-active footer_inner_quickLinks_pages_page' : 'footer_inner_quickLinks_pages_page'} onClick={() => router.push('/shop')}>Магазин</div>
                         <div className={router.asPath === '/order' ? 'footer_inner_quickLinks_pages_page-active footer_inner_quickLinks_pages_page' : 'footer_inner_quickLinks_pages_page'} onClick={() => router.push('/order')}>Замовити</div>
                     </div>
