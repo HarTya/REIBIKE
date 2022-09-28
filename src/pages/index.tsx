@@ -34,7 +34,7 @@ function Index(): ReactElement {
     const [click, setClick] = useState(0);
 
     return (
-        <Layout title='Про нас'>
+        <Layout title='Головна'>
             <div className='everythingForYou'>
                 <div className='container'>
                     <div className='everythingForYou_inner'>
