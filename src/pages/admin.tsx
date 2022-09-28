@@ -795,7 +795,7 @@ function Admin(props): ReactElement {
                                 <div className={isBrandsAdminSelectOpen ? 'admin_brands-active admin_brands' : 'admin_brands'}>
                                     {brands.length ? brands.map(brand => 
                                         <div 
-                                            onClick={() => setProductBrandId(brand.id)}
+                                            onClick={() => {setProductBrandId(brand.id); setIsBrandsAdminSelectOpen(false)}}
                                             key={brand.id} 
                                             className={productBrandId === brand.id ? 'admin_brands_brand-active admin_brands_brand' : 'admin_brands_brand'}
                                         >
