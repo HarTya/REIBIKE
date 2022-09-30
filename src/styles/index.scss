@@ -1,6 +1,6 @@
 .anythingForYourHobby {
     width: 100%;
-    height: 650px;
+    height: 600px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -72,18 +72,6 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    background: url(../images/index/messageFromOwner/bg.jpg) center no-repeat;
-    background-size: cover;
-    &::after {
-        content: '';
-        background: black;
-        opacity: 0.85;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
     &_inner {
         width: 100%;
         height: 100%;
