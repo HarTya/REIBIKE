@@ -4,6 +4,7 @@ import RecommendedProductsIcon from './icons/RecommendedProductsIcon';
 import TopPriceIcon from './icons/TopPriceIcon';
 
 function PriceSortButtons({
+    isDisabled = null,
     productsState = null, 
     setProductsState = null,
     unfilteredProducts = null,
@@ -57,14 +58,14 @@ function PriceSortButtons({
         <div className='shop_inner_sort_buttons'>
             <div 
                 onClick={() => bottomPriceProducts()} 
-                className={isBottomPriceActive ? 'shop_inner_sort_buttons_bottomPrice-active shop_inner_sort_buttons_bottomPrice' 
+                className={isDisabled ? 'shop_inner_sort_buttons_bottomPrice shop_inner_sort_buttons_bottomPrice-disabled' : isBottomPriceActive ? 'shop_inner_sort_buttons_bottomPrice-active shop_inner_sort_buttons_bottomPrice' 
                 : 'shop_inner_sort_buttons_bottomPrice'}
             >
                 <BottomPriceIcon />
             </div>
             <div 
                 onClick={() => topPriceProducts()} 
-                className={isTopPriceActive ? 'shop_inner_sort_buttons_topPrice-active shop_inner_sort_buttons_topPrice' 
+                className={isDisabled ? 'shop_inner_sort_buttons_topPrice shop_inner_sort_buttons_topPrice-disabled' : isTopPriceActive ? 'shop_inner_sort_buttons_topPrice-active shop_inner_sort_buttons_topPrice' 
                 : 'shop_inner_sort_buttons_topPrice'}
             >
                 <TopPriceIcon />

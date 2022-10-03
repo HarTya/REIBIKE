@@ -451,6 +451,7 @@
             align-items: center;
             z-index: 10;
             transition: all 0.4s ease-in-out;
+            backdrop-filter: blur(2px);
             &-active {
                 right: 0!important;
             }
@@ -694,6 +695,7 @@
                     bottom: -50px;
                     transition: all 0.2s ease-in-out;
                     z-index: 50;
+                    padding-bottom: 5px;
                     &-active {
                         bottom: 0!important;
                     }
@@ -701,7 +703,8 @@
                 &_close {
                     display: block;
                     cursor: pointer;
-                    position: relative;
+                    position: fixed;
+                    background-color: white;
                     left: -185px;
                     width: 185px;
                     height: 50px;
@@ -722,7 +725,7 @@
                     }
                 }
                 .shop_inner_sort {
-                    margin-top: 15px;
+                    margin-top: 50px;
                 }
             }
             &_select {

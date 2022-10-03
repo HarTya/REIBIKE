@@ -87,6 +87,7 @@ function ShopContent({
             setCategoryNameOfCurrentSubcategory(localStorage.getItem('categoryNameOfSubcategory'))
         }, []) : null
 
+    const [isSortButtonsDisabled, setIsSortButtonsDisabled] = useState(false);
     const [isBottomPriceActive, setIsBottomPriceActive] = useState(false);
     const [isTopPriceActive, setIsTopPriceActive] = useState(false);
     const [isRecommendedProductsActive, setIsRecommendedProductsActive] = useState(true);
@@ -120,9 +121,17 @@ function ShopContent({
     }
 
     useEffect(() => {
+        if (!searchQuery.length) {
+            return setIsSortButtonsDisabled(false)
+        }
+        return setIsSortButtonsDisabled(true)
+    }, [searchQuery.length])
+
+    useEffect(() => {
         const filteredProducts = filterProducts(searchQuery, productsState)
         refreshSortPriceButtons()
         setProductsState(filteredProducts)
+        window.scroll(0, 0)
     }, [searchQuery.length, unfilteredProducts])
 
     return (
@@ -132,7 +141,7 @@ function ShopContent({
                 <input  
                     className='search_input'
                     value={searchQuery} 
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onChange={(e) => {setSearchQuery(e.target.value); setUnfilteredProducts(unfilteredProducts)}}
                     onKeyDown={(e) => {if (e.key === 'Backspace') {return setProductsState(unfilteredProducts)}}}
                     placeholder='Пошук у каталозі'
                     autoFocus
@@ -145,6 +154,9 @@ function ShopContent({
                         .shop_inner_menu {
                             position: absolute!important;
                             top: ${menuScrollTopOffset}px!important;
+                        }
+                        .shop_inner_menu_close {
+                            position: absolute!important;
                         }
                     `}</style> : <></>}
                     <div className={isFiltrationMenuOpen ? 'shop_inner_menu_close shop_inner_menu_close-active' : 'shop_inner_menu_close'} onClick={(e) => {e.stopPropagation(); setIsFiltrationMenuOpen(false)}}>
@@ -171,6 +183,7 @@ function ShopContent({
                         <div className='shop_inner_sort'>
                             <div className='shop_inner_sort_text'>Сортувати:</div>
                             <PriceSortButtons
+                                isDisabled={isSortButtonsDisabled}
                                 productsState={productsState} 
                                 setProductsState={setProductsState} 
                                 unfilteredProducts={unfilteredProducts}
