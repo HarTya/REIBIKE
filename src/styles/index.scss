@@ -34,6 +34,7 @@
             line-height: 29px;
             opacity: 0.8;
             margin: 15px 0 25px 0;
+            font-family: Raleway-500;
         }
         &_button {
             cursor: pointer;
@@ -109,7 +110,7 @@
         }
         &_title {
             font-size: 35px;
-            font-family: Raleway-600;
+            font-family: Raleway-400;
             span {
                 font-weight: 400;
                 font-size: 35px;
@@ -117,11 +118,10 @@
             }
         }
         &_subtitle {
-            margin-top: 10px;
+            margin: 10px 0 15px 0;
             font-size: 28px;
             opacity: 0.8;
-            padding-bottom: 20px;
-            font-family: Raleway-500;
+            font-family: Raleway-400;
         }
     }
 }
@@ -204,6 +204,7 @@
             line-height: 29px;
             opacity: 0.8;
             margin: 15px 0 25px 0;
+            font-family: Raleway-500;
         }
         &_button {
             cursor: pointer;
