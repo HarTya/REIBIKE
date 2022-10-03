@@ -28,20 +28,23 @@ function ShopContent({
     const [isFiltrationMenuOpen, setIsFiltrationMenuOpen] = useState(false);
     const [isFiltrationMenuOpenButton, setIsFiltrationMenuOpenButton] = useState(true);
 
+    function scrollEventFunction() {
+        const isStuck = observableSection.current ? window.scrollY >= observableSection.current.offsetTop - window.innerHeight : false;
+        if (isStuck) {
+            setIsStuck(true)
+            setIsFiltrationMenuOpenButton(false)
+            return setMenuScrollTopOffset(
+                window.scrollY === 0 ? 0 :
+                observableSection.current.offsetTop - window.innerHeight
+            )
+        }
+        setIsStuck(false)
+        setMenuScrollTopOffset(0)
+    }
+
     useEffect(() => {
-        window.addEventListener('scroll', async () => {
-            const isStuck = observableSection.current ? window.scrollY >= observableSection.current.offsetTop - window.innerHeight : false;
-            if (isStuck) {
-                setIsStuck(true)
-                setIsFiltrationMenuOpenButton(false)
-                return setMenuScrollTopOffset(
-                    window.scrollY === 0 ? 0 :
-                    observableSection.current.offsetTop - window.innerHeight
-                )
-            }
-            setIsStuck(false)
-            setMenuScrollTopOffset(0)
-        })
+        window.addEventListener('scroll', scrollEventFunction)
+        return () => window.removeEventListener('scroll', scrollEventFunction)
     }, [])
 
     useEffect(() => {
