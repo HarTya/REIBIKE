@@ -64,7 +64,7 @@ function Order(): ReactElement {
                 <div className='container'>
                     <div className='order_inner'>
                         <div className='order_inner_title'>Як я можу замовити щось особливе?</div>
-                        <div className='order_inner_subtitle'>Наш веломагазин привезе вам що завгодно, просто залиште посилання на сайт запчастини чи велосипеда та напишіть комментарій до замовлення</div>
+                        <div className='order_inner_subtitle'>Наш веломагазин привезе вам що завгодно, просто залиште посилання на товар, який ви обрали та напишіть комментарій до замовлення</div>
                         {loading ? <Loader white={true} /> :
                             <>
                                 <div className='order_inner_inputs'>
