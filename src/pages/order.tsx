@@ -43,6 +43,7 @@ function Order(): ReactElement {
 
     const orderLink = async (e: React.SyntheticEvent) => {
         e.preventDefault()
+        window.scroll(0, 0)
         setLoading(true)
         setSuccess('')
         setError('')
