@@ -28,6 +28,7 @@
             font-size: 50px;
             font-weight: bold;
             line-height: 1.2;
+            font-family: Raleway-600;
         }
         &_subtitle {
             font-size: 25px;
@@ -170,12 +171,12 @@
 
 .everythingForYou {
     width: 100%;
-    height: 600px;
+    height: 750px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url(../images/index/anythingForYourHobby/bg.jpg) center no-repeat;
+    background: url(../images/index/anythingForYourHobby/bg-sell.jpg) 100% 70% no-repeat;
     background-size: cover;
     &::after {
         content: '';
@@ -198,6 +199,7 @@
             font-size: 50px;
             font-weight: bold;
             line-height: 1.2;
+            font-family: Raleway-700;
         }
         &_subtitle {
             font-size: 25px;
