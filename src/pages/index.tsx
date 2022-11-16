@@ -31,8 +31,8 @@ function Index(): ReactElement {
             <div className='everythingForYou'>
                 <div className='container'>
                     <div className='everythingForYou_inner'>
-                        <div className='everythingForYou_inner_title'>Закриття сезону<br /> Знижка 10% на доставку</div>
-                        <div className='everythingForYou_inner_subtitle'>Велосезон наближається до кінця, та щоб ви точно встигли вдосталь їм насолодитися ми пропонуємо знижку 10% на доставку будь-якого товару (акція діє з 5.10.2022 до 5.11.2022)</div>
+                        <div className='everythingForYou_inner_title'>Будь що завгодно для вашого хобі</div>
+                        <div className='everythingForYou_inner_subtitle'>В нашому веломагазині ви можете знайти багато популярних брендів та замовити для себе все що завгодно звідки завгодно за доступні гроші</div>
                         <div className='everythingForYou_inner_button' onClick={() => router.push('/order')}>Замовити</div>
                     </div>
                 </div>
